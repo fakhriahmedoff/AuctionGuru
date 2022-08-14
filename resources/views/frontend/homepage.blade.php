@@ -396,7 +396,7 @@
         </section>
 
         <section id="about-us"
-            class="section section-with-shape-divider border-0 custom-bg-color-grey-1 overflow-visible z-index-1 m-0 pt-0 pb-1">
+                 class="section section-with-shape-divider border-0 custom-bg-color-grey-1 overflow-visible z-index-1 m-0 pt-0 pb-1">
             <div class="container custom-xs-margin-top-1 pt-3 pb-lg-5 mb-lg-5">
                 {{--                <div class="overflow-hidden mb-1">--}}
                 {{--                            <span--}}
@@ -484,7 +484,7 @@
                 <div class="col-md-9 col-lg-5 col-xl-6 mb-5 mb-lg-0">
                     <div data-plugin-float-element
                          data-plugin-options="{'startPos': 'bottom', 'speed': 0.3, 'transition': true, 'transitionDuration': 1000, 'isInsideSVG': true}">
-                        <img src="{{asset('frontend')}}/images/product-landing-noise.jpg"
+                        <img src="{{asset('frontend')}}/images/mainpic.png"
                              class="img-fluid appear-animation" alt=""
                              data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
                     </div>
@@ -492,19 +492,31 @@
                 <div class="col-lg-7 col-xl-6 pb-4">
                     <div class="overflow-hidden mb-1">
                         <span class="d-block text-color-default custom-letter-spacing-1 text-3-5 mb-0 appear-animation"
-                              data-appear-animation="maskUp" data-appear-animation-delay="400">EXTRA CONFORT</span>
+                              data-appear-animation="maskUp" data-appear-animation-delay="400">Lorem text</span>
                     </div>
                     <div class="overflow-hidden mb-4">
                         <h2 class="font-weight-bold text-9 negative-ls-05 line-height-2 mb-0 appear-animation"
-                            data-appear-animation="maskUp" data-appear-animation-delay="600">Noise Cancelling</h2>
+                            data-appear-animation="maskUp" data-appear-animation-delay="600">What are the EFJ's
+                            advantages?
+                        </h2>
                     </div>
-                    <p class="font-weight-bold text-4-5 line-height-6 mb-4 appear-animation"
-                       data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">Lorem ipsum dolor sit
-                        amet, consectetur adipiscing elit. Sed imperdiet libero id nisi euismod, sed porta est.</p>
-                    <p class="text-3-5 pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter"
-                       data-appear-animation-delay="1000">Vestibulum auctor felis eget orci semper vestibulum.
-                        Pellentesque ultricies nibh gravida, accumsan libero luctus, molestie nunc. In nibh ipsum,
-                        blandit id faucibus ac, finibus vitae dui.</p>
+                    <div class="efj-advantages">
+                        <ul>
+                            <li>Fourteen years of experience in car inspection, maintenance, auction bidding,
+                                and price negotiation
+                            </li>
+                            <li>Professional understanding of automotive terminology used in auction
+                                sheets
+                            </li>
+                            <li>Precise and thorough translation by university-educated professionals
+                            </li>
+                            <li>EFJ is an authorized Japanese car exporter working in partnership with Japanese
+                                auction houses, local dealerships, and inspection agencies
+                            </li>
+                            <li>Cars are more than our business – they are our passion!
+                            </li>
+                        </ul>
+                    </div>
                     <a href="demo-product-landing-checkout.html"
                        class="btn btn-primary btn-rounded font-weight-bold text-3-5 px-5 py-3 appear-animation"
                        data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1200">Buy Now!</a>
@@ -920,26 +932,26 @@
         {{--            </div>--}}
         {{--        </section>--}}
 
-        <section id="explore" class="section video section-height-4 overlay overlay-show overlay-op-8 border-0 m-0"
-                 data-video-path="video/memory-of-a-woman" data-plugin-video-background
-                 data-plugin-options="{'posterType': 'jpg', 'position': '50% 50%', 'autoplay': false, 'changePoster': '{{asset('frontend')}}/img/demos/product-landing/backgrounds/background-1.jpg'}">
-            <div class="container py-5 my-5">
-                <div class="row">
-                    <div class="col text-center">
-                        <div class="video-background-play-wrapper">
-                            <h2 class="d-flex flex-wrap align-items-center justify-content-center text-color-light font-weight-bold text-10 negative-ls-05 mb-0 appear-animation"
-                                data-appear-animation="blurIn" data-appear-animation-delay="400">
-                                Explore The Best Of You
-                                <a href="https://vimeo.com/45830194"
-                                   class="video-background-play text-decoration-none custom-play-button-1 bg-primary bg-hover-primary text-color-light ms-3 my-4">
-                                    <i class="fas fa-play"></i>
-                                </a>
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        {{--        <section id="video" class="section video section-height-4 overlay overlay-show overlay-op-8 border-0 m-0"--}}
+        {{--                 data-video-path="video/memory-of-a-woman" data-plugin-video-background--}}
+        {{--                 data-plugin-options="{'posterType': 'jpg', 'position': '50% 50%', 'autoplay': false, 'changePoster': '{{asset('frontend')}}/img/demos/product-landing/backgrounds/background-1.jpg'}">--}}
+        {{--            <div class="container py-5 my-5">--}}
+        {{--                <div class="row">--}}
+        {{--                    <div class="col text-center">--}}
+        {{--                        <div class="video-background-play-wrapper">--}}
+        {{--                            <h2 class="d-flex flex-wrap align-items-center justify-content-center text-color-light font-weight-bold text-10 negative-ls-05 mb-0 appear-animation"--}}
+        {{--                                data-appear-animation="blurIn" data-appear-animation-delay="400">--}}
+        {{--                                Explore The Best Of You--}}
+        {{--                                <a href="https://vimeo.com/45830194"--}}
+        {{--                                   class="video-background-play text-decoration-none custom-play-button-1 bg-primary bg-hover-primary text-color-light ms-3 my-4">--}}
+        {{--                                    <i class="fas fa-play"></i>--}}
+        {{--                                </a>--}}
+        {{--                            </h2>--}}
+        {{--                        </div>--}}
+        {{--                    </div>--}}
+        {{--                </div>--}}
+        {{--            </div>--}}
+        {{--        </section>--}}
 
         <div class="container">
             <div class="row justify-content-center py-5 my-4">

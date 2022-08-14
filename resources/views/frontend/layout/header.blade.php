@@ -55,7 +55,7 @@
                 <div class="header-row py-3">
                     <div class="header-column flex-row w-auto">
                         <div class="header-logo">
-                            <a href="demo-product-landing.html">
+                            <a href="#">
                                 <img src="{{asset('frontend')}}/images/product-landing-logo.png" alt="Porto" width="123" height="32">
                             </a>
                         </div>
@@ -70,26 +70,26 @@
                                         <ul class="nav nav-pills flex-column flex-lg-row w-100" id="mainNav">
                                             <li class="dropdown">
                                                 <a class="dropdown-item active" data-hash data-hash-offset="0"
-                                                   data-hash-offset-lg="70" href="#intro">Intro</a>
+                                                   data-hash-offset-lg="70" href="#home">Home</a>
                                             </li>
                                             <li class="dropdown">
                                                 <a class="dropdown-item" data-hash data-hash-offset="0"
-                                                   data-hash-offset-lg="70" href="#features">Features</a>
+                                                   data-hash-offset-lg="70" href="#pricing">Pricing</a>
                                             </li>
                                             <li class="dropdown">
                                                 <a class="dropdown-item" data-hash data-hash-offset="0"
-                                                   data-hash-offset-lg="70" href="#tour">Tour</a>
+                                                   data-hash-offset-lg="70" href="#about-us">About us</a>
                                             </li>
                                             <li class="dropdown">
                                                 <a class="dropdown-item" data-hash data-hash-offset="0"
-                                                   data-hash-offset-lg="70" href="#specifications">Specifications</a>
+                                                   data-hash-offset-lg="70" href="#we-provide">What we provide</a>
                                             </li>
                                             <li class="dropdown">
                                                 <a class="dropdown-item" data-hash data-hash-offset="0"
                                                    data-hash-offset-lg="90" href="#reviews">Reviews</a>
                                             </li>
                                             <li class="dropdown">
-                                                <a class="dropdown-item" href="demo-product-landing-checkout.html">Buy
+                                                <a class="dropdown-item" href="#">Buy
                                                     Now</a>
                                             </li>
                                             <li class="dropdown ms-lg-auto no-line-effect">

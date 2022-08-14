@@ -124,11 +124,11 @@
         }
 
 
-        #specifications #section-en-description-1 li{
+        #we-provide #section-en-description-1 li {
             color: white;
         }
 
-        .section.section.section-height-3{
+        .section.section.section-height-3 {
             background: url("/frontend/images/backimage.jpeg");
             /* Set a specific height */
             min-height: 200px;
@@ -141,11 +141,16 @@
             padding: 0px !important;
 
         }
-        #specifications .master-container{
+
+        #we-provide .master-container {
             background: rgba(0, 0, 0, 0.75);
             padding: 4.6153846154rem 0;
         }
 
+        #about-us img {
+            margin-top: -30px;
+            padding: 10px !important
+        }
     </style>
 
 @endsection
@@ -153,7 +158,7 @@
 
     <div role="main" class="main">
 
-        <section id="intro"
+        <section id="home"
                  class="section section-with-shape-divider border-0 custom-bg-color-grey-1 overflow-visible m-0 pt-5 pb-5 pb-lg-0">
             <div class="container position-relative z-index-2 h-100 py-md-5">
                 <div class="row align-items-center justify-content-center h-100 pt-5 py-xl-5 my-xl-5 pb-0">
@@ -296,7 +301,7 @@
 
             </div>
         </section>
-        <section id="features" class="section section-with-shape-divider border-0 bg-transparent m-0 p-0">
+        <section id="asd" class="section section-with-shape-divider border-0 bg-transparent m-0 p-0">
             <div class="container pt-lg-5">
                 {{--                <div class="row">--}}
                 {{--                    <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="zoom-im" data-aos-delay="100">--}}
@@ -390,24 +395,38 @@
             </div>
         </section>
 
-        <section
+        <section id="about-us"
             class="section section-with-shape-divider border-0 custom-bg-color-grey-1 overflow-visible z-index-1 m-0 pt-0 pb-1">
             <div class="container custom-xs-margin-top-1 pt-3 pb-lg-5 mb-lg-5">
+                {{--                <div class="overflow-hidden mb-1">--}}
+                {{--                            <span--}}
+                {{--                                class="d-block text-color-default custom-letter-spacing-1 text-3-5 mb-0 appear-animation"--}}
+                {{--                                data-appear-animation="maskUp"--}}
+                {{--                                data-appear-animation-delay="400">Japanese Auction Sheet Translation Services</span>--}}
+                {{--                </div>--}}
+                {{--                <div class="overflow-hidden mb-4">--}}
+                {{--                    <h2 class="font-weight-bold text-9 negative-ls-05 line-height-2 mb-0 appear-animation"--}}
+                {{--                        data-appear-animation="maskUp" data-appear-animation-delay="600">Are you thinking of--}}
+                {{--                        buying a car at a Japanese car auction? That’s a smart choice, because the quality of--}}
+                {{--                        pre-owned Japanese vehicles is second to none!--}}
+                {{--                    </h2>--}}
+                {{--                </div>--}}
+                <div class="section-title">
+                    <h2 class="font-weight-bold text-9 text-center mb-2 mt-5 line-height-2 appear-animation animated maskUp appear-animation-visible"
+                        data-appear-animation="maskUp" data-appear-animation-delay="600"
+                        style="animation-delay: 600ms;">Japanese Auction Sheet Translation Services
+                    </h2>
+                    <br>
+                    <p class="mb-5 appear-animation animated maskUp appear-animation-visible text-center">Are you
+                        thinking of buying
+                        a car at a Japanese car auction? That’s a smart choice, because the quality of pre-owned
+                        Japanese vehicles is second to none!
+                    </p>
+                </div>
+
                 <div class="row align-items-start justify-content-center ">
                     <div class="col-lg-8 col-xl-6 pb-5 pb-lg-0 mb-lg-5 mb-xl-0">
-                        <div class="overflow-hidden mb-1">
-                            <span
-                                class="d-block text-color-default custom-letter-spacing-1 text-3-5 mb-0 appear-animation"
-                                data-appear-animation="maskUp"
-                                data-appear-animation-delay="400">Japanese Auction Sheet Translation Services</span>
-                        </div>
-                        <div class="overflow-hidden mb-4">
-                            <h2 class="font-weight-bold text-9 negative-ls-05 line-height-2 mb-0 appear-animation"
-                                data-appear-animation="maskUp" data-appear-animation-delay="600">Are you thinking of
-                                buying a car at a Japanese car auction? That’s a smart choice, because the quality of
-                                pre-owned Japanese vehicles is second to none!
-                            </h2>
-                        </div>
+
                         <p class="font-weight-bold text-4-5 line-height-6 mb-4 appear-animation"
                            data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">Lorem ipsum dolor
                             sit amet, consectetur adipiscing elit.</p>
@@ -417,32 +436,34 @@
                             they’re put on the market. So getting a complete and accurate translation of the auction
                             inspector’s report is essential before making your purchase.
                         </p>
+                        <p class="text-3-5 font-weight-bold appear-animation" data-appear-animation="fadeInUpShorter"
+                           data-appear-animation-delay="1000">The problem: auction sheets can be extremely technical and
+                            difficult to understand.
+                        </p>
+                        <p class="text-3-5 pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter"
+                           data-appear-animation-delay="1000">EFJ is here to help! With over a decade of experience in
+                            the
+                            Japanese car auction industry, our professionals are trusted experts in auction sheet
+                            translation. We work hard to ensure that our clients have all the information they need to
+                            make
+                            the right car-buying decision – and avoid costly buying mistakes due to inaccurate or
+                            incomplete
+                            information.
+                        </p>
+                        <a href="#features" data-hash data-hash-offset="0" data-hash-offset-lg="70"
+                           class="btn btn-primary btn-rounded font-weight-bold text-3-5 px-5 py-3 appear-animation"
+                           data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1200">Features</a>
                     </div>
                     <div class="col-md-9 col-lg-4 col-xl-6 mb-5 mb-lg-0 ">
                         <div data-plugin-float-element
                              data-plugin-options="{'startPos': 'top', 'speed': 0.3, 'transition': true, 'transitionDuration': 1000, 'isInsideSVG': true}">
                             <img src="{{asset('frontend')}}/images/secpic.jpeg"
-                                 class="img-fluid  appear-animation" style="padding: 20px !important" alt=""
+                                 class="img-fluid  appear-animation" style="" alt=""
                                  data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
                         </div>
                     </div>
                 </div>
-                <div class="">
-                    <p class="text-3-5 font-weight-bold appear-animation" data-appear-animation="fadeInUpShorter"
-                       data-appear-animation-delay="1000">The problem: auction sheets can be extremely technical and
-                        difficult to understand.
-                    </p>
-                    <p class="text-3-5 pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter"
-                       data-appear-animation-delay="1000">EFJ is here to help! With over a decade of experience in the
-                        Japanese car auction industry, our professionals are trusted experts in auction sheet
-                        translation. We work hard to ensure that our clients have all the information they need to make
-                        the right car-buying decision – and avoid costly buying mistakes due to inaccurate or incomplete
-                        information.
-                    </p>
-                    <a href="#features" data-hash data-hash-offset="0" data-hash-offset-lg="70"
-                       class="btn btn-primary btn-rounded font-weight-bold text-3-5 px-5 py-3 appear-animation"
-                       data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1200">Features</a>
-                </div>
+
                 <div class="spacer pt-5 pb-5 my-lg-5 my-xl-0"></div>
 
             </div>
@@ -536,7 +557,7 @@
             {{--            </div>--}}
         </div>
 
-        <section class="section section-height-3 bg-dark border-0 m-0" id="specifications">
+        <section class="section section-height-3 bg-dark border-0 m-0" id="we-provide">
             <div class="master-container">
                 <div class="container">
                     <div class="row align-items-center">
@@ -547,7 +568,8 @@
                                 {{--                                <span class="d-block text-color-light custom-letter-spacing-1 text-3-5 opacity-5 mb-0">Japanese Auction Sheet Translation Services</span>--}}
                                 {{--                            </div>--}}
                             </div>
-                            <h2 class="text-color-light font-weight-bold ls-0 text-9 mb-4">What details will EFJ’s auction
+                            <h2 class="text-color-light font-weight-bold ls-0 text-9 mb-4">What details will EFJ’s
+                                auction
                                 sheet translation service provide?
                             </h2>
                             <p class="text-3-5 text-color-light opacity-5">
@@ -566,7 +588,7 @@
                             <div class="d-flex flex-wrap align-items-center justify-content-lg-end">
 									<span class="text-color-primary font-weight-bold text-11 line-height-1 me-4">
 										<span
-                                            class="d-block text-color-light custom-font-size-2 line-height-3 font-weight-light opacity-5">Starting at</span>
+                                            class="d-block text-color-white custom-font-size-2 line-height-3 font-weight-light opacity-9">Starting at</span>
 										$15
 									</span>
                                 <a href="demo-product-landing-checkout.html"
@@ -580,51 +602,56 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 col-lg-4 pe-lg-4 py-lg-2">
-                            <ul class="list list-light list-unstyled mb-0">
-                                <li class="text-color-light font-weight-light mb-1"><span
-                                        class="custom-min-width opacity-5">Designed For</span> Smartphones
-                                </li>
-                                <li class="text-color-light font-weight-light mb-1"><span
-                                        class="custom-min-width opacity-5">Circumaural</span> Supra-aural
-                                </li>
-                                <li class="text-color-light font-weight-light mb-1"><span
-                                        class="custom-min-width opacity-5">Magnet Type</span> Neodymium
-                                </li>
-                                <li class="text-color-light font-weight-light mb-1 mb-lg-0"><span
-                                        class="custom-min-width opacity-5">Wih Microphone</span> Yes
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6 col-lg-4 px-lg-4 py-lg-2">
-                            <ul class="list list-light list-unstyled mb-0">
-                                <li class="text-color-light font-weight-light mb-1"><span
-                                        class="custom-min-width opacity-5">Glass Type</span> Monocle
-                                </li>
-                                <li class="text-color-light font-weight-light mb-1"><span
-                                        class="custom-min-width opacity-5">Lens Type</span> Bi Convex
-                                </li>
-                                <li class="text-color-light font-weight-light mb-1"><span
-                                        class="custom-min-width opacity-5">Suitable For</span> Entertainment
-                                </li>
-                                <li class="text-color-light font-weight-light mb-1 mb-lg-0"><span
-                                        class="custom-min-width opacity-5">Functions</span> Graphical Display
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6 col-lg-4 ps-lg-4 py-lg-2">
-                            <ul class="list list-light list-unstyled mb-0">
-                                <li class="text-color-light font-weight-light mb-1"><span
-                                        class="custom-min-width opacity-5">Compatible OS</span> Android
-                                </li>
-                                <li class="text-color-light font-weight-light mb-1"><span
-                                        class="custom-min-width opacity-5">Compatible Eye</span> Both
-                                </li>
-                                <li class="text-color-light font-weight-light mb-1 mb-lg-0"><span
-                                        class="custom-min-width opacity-5">Control Type</span> Manual
-                                </li>
-                            </ul>
-                        </div>
+                        <p class="text-color-white">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate veritatis, voluptates.
+                            Accusamus accusantium animi aperiam commodi cumque dolore earum eveniet facilis fugit iusto
+                            magnam magni numquam, qui soluta ullam ut.
+                        </p>
+                        {{--                        <div class="col-md-6 col-lg-4 pe-lg-4 py-lg-2">--}}
+                        {{--                            <ul class="list list-light list-unstyled mb-0">--}}
+                        {{--                                <li class="text-color-light font-weight-light mb-1"><span--}}
+                        {{--                                        class="custom-min-width opacity-5">Designed For</span> Smartphones--}}
+                        {{--                                </li>--}}
+                        {{--                                <li class="text-color-light font-weight-light mb-1"><span--}}
+                        {{--                                        class="custom-min-width opacity-5">Circumaural</span> Supra-aural--}}
+                        {{--                                </li>--}}
+                        {{--                                <li class="text-color-light font-weight-light mb-1"><span--}}
+                        {{--                                        class="custom-min-width opacity-5">Magnet Type</span> Neodymium--}}
+                        {{--                                </li>--}}
+                        {{--                                <li class="text-color-light font-weight-light mb-1 mb-lg-0"><span--}}
+                        {{--                                        class="custom-min-width opacity-5">Wih Microphone</span> Yes--}}
+                        {{--                                </li>--}}
+                        {{--                            </ul>--}}
+                        {{--                        </div>--}}
+                        {{--                        <div class="col-md-6 col-lg-4 px-lg-4 py-lg-2">--}}
+                        {{--                            <ul class="list list-light list-unstyled mb-0">--}}
+                        {{--                                <li class="text-color-light font-weight-light mb-1"><span--}}
+                        {{--                                        class="custom-min-width opacity-5">Glass Type</span> Monocle--}}
+                        {{--                                </li>--}}
+                        {{--                                <li class="text-color-light font-weight-light mb-1"><span--}}
+                        {{--                                        class="custom-min-width opacity-5">Lens Type</span> Bi Convex--}}
+                        {{--                                </li>--}}
+                        {{--                                <li class="text-color-light font-weight-light mb-1"><span--}}
+                        {{--                                        class="custom-min-width opacity-5">Suitable For</span> Entertainment--}}
+                        {{--                                </li>--}}
+                        {{--                                <li class="text-color-light font-weight-light mb-1 mb-lg-0"><span--}}
+                        {{--                                        class="custom-min-width opacity-5">Functions</span> Graphical Display--}}
+                        {{--                                </li>--}}
+                        {{--                            </ul>--}}
+                        {{--                        </div>--}}
+                        {{--                        <div class="col-md-6 col-lg-4 ps-lg-4 py-lg-2">--}}
+                        {{--                            <ul class="list list-light list-unstyled mb-0">--}}
+                        {{--                                <li class="text-color-light font-weight-light mb-1"><span--}}
+                        {{--                                        class="custom-min-width opacity-5">Compatible OS</span> Android--}}
+                        {{--                                </li>--}}
+                        {{--                                <li class="text-color-light font-weight-light mb-1"><span--}}
+                        {{--                                        class="custom-min-width opacity-5">Compatible Eye</span> Both--}}
+                        {{--                                </li>--}}
+                        {{--                                <li class="text-color-light font-weight-light mb-1 mb-lg-0"><span--}}
+                        {{--                                        class="custom-min-width opacity-5">Control Type</span> Manual--}}
+                        {{--                                </li>--}}
+                        {{--                            </ul>--}}
+                        {{--                        </div>--}}
                     </div>
                 </div>
             </div>

@@ -1,21 +1,28 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Application;
-use Illuminate\Http\Request;
-use Illuminate\View\Factory;
-use Illuminate\View\View;
+use App\Http\Requests\backend\AdminLoginRequest;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-  
-    public function loginPage(): Application|Factory|View
+    public function login(AdminLoginRequest $request): RedirectResponse
     {
-        return view('backend.auth.login');
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended(route('admin.dashboard'))
+                ->withSuccess('Signed in');
+        }
+        return redirect()->route('loginPage')->withErrors('Login details are not valid');
     }
-
-
+    public function logout(): RedirectResponse
+    {
+        return redirect()->route('home');
+    }
 }

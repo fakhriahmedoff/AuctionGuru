@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomepageController::class, 'home'])->name('home');
+Route::get('/order-now', [\App\Http\Controllers\site\OrderController::class, 'index'])->name('orderPage');
+Route::post('/order-now', [\App\Http\Controllers\site\OrderController::class, 'order'])->name('order');

@@ -51,6 +51,6 @@ class AuthController extends Controller
 
         $this->adminService->updateUserDetails($user, $request);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Admin uğurla yeniləndi');
     }
 }

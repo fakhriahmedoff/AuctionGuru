@@ -16,7 +16,6 @@ class AdminService
             'name' => $request->getName(),
             'email' => $request->getEmail(),
         ]);
-
         if ($request->getPassword()) {
             $user->fill([
                 'password' => Hash::make($request->getPassword()),

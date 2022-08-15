@@ -1,11 +1,5 @@
 <!-- /.content-wrapper -->
-<footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 3.2.0
-    </div>
-</footer>
+
 
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">
@@ -14,7 +8,12 @@
 <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
+<footer class="main-footer">
+    <strong>Copyright &copy; 2009-{{now()->format('Y')}} <a href="https://exportfrom.jp/">ExportForm.jp</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+    </div>
+</footer>
 <!-- jQuery -->
 <script src="{{asset('backend')}}/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->

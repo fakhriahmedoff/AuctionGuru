@@ -195,10 +195,10 @@
                             data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1600">
                             <span class="font-weight-light text-4">Starting at</span>
                             <span class="text-color-primary font-weight-bold text-11 my-3 my-sm-0 mx-4">$15</span>
-                            <a href="#"
+                            <a href="{{route('order')}}"
                                class="btn btn-primary btn-rounded font-weight-bold text-4 px-5 py-3">Order now!</a>
                         </div>
-                        <a href="#"
+                        <a href="#about-us"
                            class="d-inline-flex align-items-center text-color-default text-color-hover-primary text-decoration-none font-weight-medium ms-3 ms-sm-0 appear-animation"
                            data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1800">Learn More <i
                                 class="icons icon-arrow-right text-1 ms-2"></i></a>
@@ -256,7 +256,7 @@
                                 <li class="na">Massa ultricies mi</li>
                             </ul>
                             <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Buy Now</a>
+                                <a href="{{route('order')}}" class="btn-buy">Order now</a>
                             </div>
                         </div>
                     </div>
@@ -274,7 +274,7 @@
                                 <li class="na">Massa ultricies mi</li>
                             </ul>
                             <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Buy Now</a>
+                                <a href="{{route('order')}}" class="btn-buy">Order now</a>
                             </div>
                         </div>
                     </div>
@@ -292,7 +292,7 @@
                                 <li>Massa ultricies mi</li>
                             </ul>
                             <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Buy Now</a>
+                                <a href="{{route('order')}}" class="btn-buy">Order now</a>
                             </div>
                         </div>
                     </div>
@@ -450,9 +450,9 @@
                             incomplete
                             information.
                         </p>
-                        <a href="#features" data-hash data-hash-offset="0" data-hash-offset-lg="70"
-                           class="btn btn-primary btn-rounded font-weight-bold text-3-5 px-5 py-3 appear-animation"
-                           data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1200">Features</a>
+{{--                        <a href="#features" data-hash data-hash-offset="0" data-hash-offset-lg="70"--}}
+{{--                           class="btn btn-primary btn-rounded font-weight-bold text-3-5 px-5 py-3 appear-animation"--}}
+{{--                           data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1200">Features</a>--}}
                     </div>
                     <div class="col-md-9 col-lg-4 col-xl-6 mb-5 mb-lg-0 ">
                         <div data-plugin-float-element
@@ -480,6 +480,7 @@
         </section>
 
         <div class="container position-relative z-index-2 pt-5 mt-md-5 mt-xl-0 pt-xl-0">
+
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-9 col-lg-5 col-xl-6 mb-5 mb-lg-0">
                     <div data-plugin-float-element
@@ -603,8 +604,8 @@
                                             class="d-block text-color-white custom-font-size-2 line-height-3 font-weight-light opacity-9">Starting at</span>
 										$15
 									</span>
-                                <a href="demo-product-landing-checkout.html"
-                                   class="btn btn-primary btn-rounded font-weight-bold text-3-5 px-5 py-3">Buy Now!</a>
+                                <a href="{{route('order')}}"
+                                   class="btn btn-primary btn-rounded font-weight-bold text-3-5 px-5 py-3">Order now!</a>
                             </div>
                         </div>
                     </div>

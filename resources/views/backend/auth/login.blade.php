@@ -17,30 +17,32 @@
 <body class="login-page" style="min-height: 496.781px;">
 <div class="login-box">
     <div class="login-logo">
-      <b>Auction</b>Guru
+        <b>Auction</b>Guru
     </div>
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
             <p class="login-box-msg">Admin məlumatlarınızı daxil edin</p>
-            {{dump($errors)}}
             <form action="{{route('login')}}" method="post">
                 @csrf
-                <div class="input-group mb-3">
-                    <input type="email" name="email" value="{{ old('email') }}" class="form-control" placeholder="Email">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-envelope"></span>
-                        </div>
-                    </div>
+                <div class="form-group mb-3">
+                    {!! html()->input('email', old('email'), [
+                                                     'placeholder' => 'Email',
+                                                     'errorLabel' => $errors->first('email')
+                                                     ]) !!}
                 </div>
-                <div class="input-group mb-3">
-                    <input type="password" name="password" value="{{ old('password') }}" class="form-control" placeholder="Şifrə">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-lock"></span>
+                <div class="form-group mb-3">
+                    {!! html()->input('password', old('password'), [
+                                                     'placeholder' => 'Şifrə',
+                                                     'errorLabel' => $errors->first('password')
+                                                     ], 'password') !!}
+                </div>
+                <div class="row">
+                    @if (isset($error))
+                        <div class="alert w-100 alert-danger">
+                            {{$error}}
                         </div>
-                    </div>
+                    @endif
                 </div>
                 <div class="row">
                     <div class="col-12">

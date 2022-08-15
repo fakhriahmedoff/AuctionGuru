@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "012bdc1570b2e8fdb538d2b707471e13",
+    "content-hash": "ff4927631e94e16315377c721fb2bacb",
     "packages": [
         {
             "name": "brick/math",
@@ -888,6 +888,54 @@
                 }
             ],
             "time": "2022-06-20T21:43:11+00:00"
+        },
+        {
+            "name": "i80586/laravel-form-fields",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/i80586/laravel-form-fields.git",
+                "reference": "83c6bf81e29d81f931b1f1b6f9336eb13f740a12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/i80586/laravel-form-fields/zipball/83c6bf81e29d81f931b1f1b6f9336eb13f740a12",
+                "reference": "83c6bf81e29d81f931b1f1b6f9336eb13f740a12",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "i80586\\Form\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rasim",
+                    "email": "rasim.ashurov@gmail.com"
+                }
+            ],
+            "description": "Laravel form fields generator - for admin panels",
+            "keywords": [
+                "form",
+                "html",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/i80586/laravel-form-fields/issues",
+                "source": "https://github.com/i80586/laravel-form-fields/tree/v1.0"
+            },
+            "time": "2022-07-08T08:24:36+00:00"
         },
         {
             "name": "itstructure/laravel-grid-view",

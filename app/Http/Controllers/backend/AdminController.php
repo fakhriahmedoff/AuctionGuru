@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Http\Controllers\backend;
 
@@ -17,4 +18,6 @@ class AdminController extends Controller
     {
         return view('backend.dashboard');
     }
+
+
 }

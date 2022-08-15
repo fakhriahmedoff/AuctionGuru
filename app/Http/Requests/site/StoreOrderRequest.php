@@ -6,6 +6,12 @@ namespace App\Http\Requests\site;
 use Illuminate\Foundation\Http\FormRequest;
 use JetBrains\PhpStorm\ArrayShape;
 
+/**
+ * @property string name
+ * @property string email
+ * @property string message
+ * @property array uploaded_files
+ */
 class StoreOrderRequest extends FormRequest
 {
 
@@ -29,4 +35,26 @@ class StoreOrderRequest extends FormRequest
             'uploaded_files' => 'required',
         ];
     }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    public function getMessage(): ?string
+    {
+        return $this->message;
+    }
+
+    public function getUploadedFiles(): ?array
+    {
+        return $this->uploaded_files;
+    }
+
+
 }

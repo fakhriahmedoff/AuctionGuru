@@ -5,6 +5,7 @@ namespace App\Http\Controllers\site;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\site\StoreOrderRequest;
+use App\Services\OrderService;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\View\Factory;
@@ -12,6 +13,10 @@ use Illuminate\View\View;
 
 class OrderController extends Controller
 {
+    public function __construct(private OrderService $orderService)
+    {
+    }
+
     public function index(): Application|Factory|View
     {
         return view('frontend.order');
@@ -19,7 +24,8 @@ class OrderController extends Controller
 
     public function order(StoreOrderRequest $request): Application|Factory|View
     {
-        dd($request->all());
+        $this->orderService->storeOrder($request);
+
         return view('frontend.order');
     }
 }

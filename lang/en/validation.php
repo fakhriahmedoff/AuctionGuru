@@ -45,8 +45,8 @@ return [
         'string'  => ' :attribute maksimum :max simvoldan ibarət ola bilər',
         'array'   => ' :attribute maksimum :max hədd\'dən ibarət ola bilər',
     ],
-    'mimes'                => ' :attribute :values tipində fayl olmalıdır',
-    'mimetypes'            => ' :attribute :values tipində fayl olmalıdır',
+    'mimes'                => ' :attribute must be :values',
+    'mimetypes'            => ' :attribute must be :values',
     'min'                  => [
         'numeric' => ' :attribute minimum :min rəqəmdən ibarət ola bilər',
         'file'    => ' :attribute minimum :min KB ölçüsündə ola bilər',

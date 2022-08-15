@@ -1,8 +1,10 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Http\Controllers\site;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\site\StoreOrderRequest;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\View\Factory;
@@ -15,8 +17,9 @@ class OrderController extends Controller
         return view('frontend.order');
     }
 
-    public function order(): Application|Factory|View
+    public function order(StoreOrderRequest $request): Application|Factory|View
     {
+        dd($request->all());
         return view('frontend.order');
     }
 }

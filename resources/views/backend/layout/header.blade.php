@@ -155,6 +155,15 @@
 {{--                    </li>--}}
 
                     <li class="nav-item">
+                        <a href="{{route('admin.texts.index')}}" class="nav-link ">
+                            <i class="fas fa-align-justify"></i>
+                            <p>
+                                Tekstlər
+                            </p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a href="{{route('admin.logout')}}" class="nav-link ">
                             <i class="fas fa-money-check"></i>
                             <p>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff4927631e94e16315377c721fb2bacb",
+    "content-hash": "96de90196f077394b3962f3f5007c6b1",
     "packages": [
         {
             "name": "brick/math",
@@ -939,7 +939,7 @@
         },
         {
             "name": "itstructure/laravel-grid-view",
-            "version": "1.0.9",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itstructure/laravel-grid-view.git",
@@ -955,6 +955,7 @@
                 "laravel/framework": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0|^9.0",
                 "php": ">=7.1.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -8018,7 +8019,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "itstructure/laravel-grid-view": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -1,30 +1,51 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Http\Requests\backend;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * @property string name
+ * @property string image
+ * @property string text
+ * @property string number
+ */
 class ReviewSaveRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
+
+    public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, mixed>
-     */
-    public function rules()
+    public function rules(): array
     {
         return [
-            //
+            "name"      => "required|max:128",
+            "image"     => "required|max:512",
+            "text"      => "required|max:1024",
+            "number"    => "required|max:12",
         ];
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getImage(): string
+    {
+        return $this->image;
+    }
+
+    public function getText(): string
+    {
+        return $this->text;
+    }
+
+    public function getNumber(): string
+    {
+        return $this->number;
     }
 }

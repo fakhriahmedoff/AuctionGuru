@@ -11,7 +11,7 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
     Route::post('/update', [\App\Http\Controllers\backend\AuthController::class, 'updateAdminDetails'])->name('updateAdminDetails');
     //crud
     Route::resource('/texts', \App\Http\Controllers\backend\TextController::class);
-    Route::get('/texts/delete/{text}', [\App\Http\Controllers\backend\TextController::class, 'delete'])->name('texts.delete');
+    Route::resource('/reviews', \App\Http\Controllers\backend\ReviewController::class);
 
 
 });

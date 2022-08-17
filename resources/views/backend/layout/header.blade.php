@@ -124,35 +124,53 @@
                     data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
-{{--                    <li class="nav-item menu-open">--}}
-{{--                        <a href="#" class="nav-link active">--}}
-{{--                            <i class="nav-icon fas fa-tachometer-alt"></i>--}}
-{{--                            <p>--}}
-{{--                                Dashboard--}}
-{{--                                <i class="right fas fa-angle-left"></i>--}}
-{{--                            </p>--}}
-{{--                        </a>--}}
-{{--                        <ul class="nav nav-treeview">--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="./index.html" class="nav-link active">--}}
-{{--                                    <i class="far fa-circle nav-icon"></i>--}}
-{{--                                    <p>Dashboard v1</p>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="./index2.html" class="nav-link">--}}
-{{--                                    <i class="far fa-circle nav-icon"></i>--}}
-{{--                                    <p>Dashboard v2</p>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="./index3.html" class="nav-link">--}}
-{{--                                    <i class="far fa-circle nav-icon"></i>--}}
-{{--                                    <p>Dashboard v3</p>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link ">
+                            <i class="fas fa-file-alt"></i>
+                            <p>
+                                Hesabat
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('admin.logout')}}" class="nav-link ">
+                                    -- <i class="fas fa-user-friends"></i>
+                                    <p>
+                                        Sifarişlər
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('admin.logout')}}" class="nav-link ">
+                                    -- <i class="fas fa-money-bill"></i>
+                                    <p>
+                                       Ödənişlər
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+
+                    <li class="nav-item">
+                        <a href="{{route('admin.reviews.index')}}" class="nav-link ">
+                            <i class="fas fa-clone"></i>
+                            <p>
+                                Paketlər
+                            </p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{route('admin.reviews.index')}}" class="nav-link ">
+                            <i class="fas fa-comments"></i>
+                            <p>
+                                Şərhlər
+                            </p>
+                        </a>
+                    </li>
 
                     <li class="nav-item">
                         <a href="{{route('admin.texts.index')}}" class="nav-link ">
@@ -164,13 +182,14 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{route('admin.logout')}}" class="nav-link ">
-                            <i class="fas fa-money-check"></i>
-                            <p>
-                                 Sifarişlər
-                            </p>
-                        </a>
+                    <a href="{{route('admin.texts.index')}}" class="nav-link ">
+                        <i class="fas fa-cogs"></i>
+                        <p>
+                            Konfiqurasiyalar
+                        </p>
+                    </a>
                     </li>
+
 
                     <li class="nav-item menu-open">
                         <a href="{{route('admin.logout')}}" class="nav-link ">

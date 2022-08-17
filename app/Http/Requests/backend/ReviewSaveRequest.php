@@ -23,7 +23,7 @@ class ReviewSaveRequest extends FormRequest
     {
         return [
             "name"      => "required|max:128",
-            "image"     => "required|max:512",
+            "image"     => "nullable|max:512",
             "text"      => "required|max:1024",
             "number"    => "required|max:12",
         ];
@@ -34,7 +34,7 @@ class ReviewSaveRequest extends FormRequest
         return $this->name;
     }
 
-    public function getImage(): string
+    public function getImage(): ?string
     {
         return $this->image;
     }

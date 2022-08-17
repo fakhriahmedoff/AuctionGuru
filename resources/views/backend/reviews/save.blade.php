@@ -1,22 +1,25 @@
 @extends('backend.layout.master')
 @php
-    $route = route('admin.texts.store');
+    $route = route('admin.reviews.store');
     $edit = false;
 
-    if (isset($text))
+    if (isset($review))
     {
         $edit   = true;
-        $route  = route('admin.texts.update',$text->id);
+        $route  = route('admin.reviews.update',$review->id);
     }
 
 @endphp
-@section('title', 'Tekst')
+@section('title', 'Şərhlər')
 
 @section('content')
     <div class="col-12">
-        <form action="{{$route}}" method="POST">
+        <form action="{{$route}}" method="POST" enctype="multipart/form-data">
             @csrf
-            @method('PUT')
+            @if($edit)
+                @method('PUT')
+            @endif
+
             <div class="row">
                 <div class="col-md-10">
                     <div class="card card-primary card-outline card-tabs">
@@ -24,38 +27,39 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        {!! html()->dropDown('group',$edit ? $text->group : null ,['site' => 'site','admin' => 'admin'], [
-                                            'prompt' => ' - Seçin -',
-                                            'label' => 'Qrup',
+                                        {!! html()->input('name', $edit ? $review->name : null,[
+                                              'class' => 'form-control ',
+                                              'label' => 'Adı',
+                                              'errorLabel' => $errors->first('name')
+                                          ]) !!}
+                                    </div>
+                                    <div class="form-group">
+                                        {!! html()->input('image', $edit ? $review->image : null,[
                                             'class' => 'form-control ',
-                                             'errorLabel' => $errors->first('group')
-
-                                        ]) !!}
+                                            'label' => 'Şəkil',
+                                            'errorLabel' => $errors->first('image')
+                                        ],'file') !!}
+                                        <img src="{{asset('storage/app')}}/{{$edit ? $review->image : null}}" width="250px" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        {!! html()->input('key', $edit ? $text->key : null,[
+                                        {!! html()->input('text', $edit ? $review->text : null,[
                                             'class' => 'form-control ',
-                                            'label' => 'Key',
-                                            'errorLabel' => $errors->first('key')
+                                            'label' => 'Tekst',
+                                            'errorLabel' => $errors->first('text')
                                         ]) !!}
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group w-100">
-                                        <label for="">Tekst</label>
-                                        <textarea name="value"
-                                                  class="form-control @if($errors->first('value')) is-invalid @endif"
-                                                  cols="30" rows="3">{{$edit ? $text->value : null}}</textarea>
-                                        @if($errors->first('value'))
-                                            <span class="text-danger"> {{$errors->first('value')}}</span>
-                                        @endif
+                                    <div class="form-group">
+                                        {!! html()->dropDown('number', $edit ? $review->number : null,[1 => 1,2 => 2,3 => 3 ,4 => 4,5 => 5],[
+                                             'class' => 'form-control ',
+                                             'label' => 'Ulduz sayı',
+                                             'errorLabel' => $errors->first('number')
+                                         ]) !!}
                                     </div>
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-12 d-flex justify-content-center">
                                     <input type="submit" value="@lang('admin.save')"

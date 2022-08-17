@@ -12,6 +12,7 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
     //crud
     Route::resource('/texts', \App\Http\Controllers\backend\TextController::class);
     Route::resource('/reviews', \App\Http\Controllers\backend\ReviewController::class);
+    Route::get('/reviews/delete/{review}', [\App\Http\Controllers\backend\ReviewController::class,'delete'])->name('reviews.delete');
 
 
 });

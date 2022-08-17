@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace App\Http\Requests\backend;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\UploadedFile;
+use JetBrains\PhpStorm\ArrayShape;
 
 /**
  * @property string name
@@ -19,11 +21,12 @@ class ReviewSaveRequest extends FormRequest
         return true;
     }
 
+    #[ArrayShape(["name" => "string", "image" => "string", "text" => "string", "number" => "string"])]
     public function rules(): array
     {
         return [
             "name"      => "required|max:128",
-            "image"     => "nullable|max:512",
+            "image"     => "nullable|image|max:512",
             "text"      => "required|max:1024",
             "number"    => "required|max:12",
         ];
@@ -34,7 +37,7 @@ class ReviewSaveRequest extends FormRequest
         return $this->name;
     }
 
-    public function getImage(): ?string
+    public function getImage(): ?UploadedFile
     {
         return $this->image;
     }

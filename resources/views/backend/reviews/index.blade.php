@@ -5,19 +5,16 @@
 @section('content')
 
     <div class="mt-3">
+        <div class="card-header">
+            <a href="{{route('admin.reviews.create')}}" class="btn btn-primary">Şərh yarat</a>
+        </div>
         {!! grid_view([
             'dataProvider' => $dataProvider,
             'useFilters' => true,
             'columnFields' => [
-                [
-                    'attribute' => 'group',
-                    'filter' => [
-                        'class' => Itstructure\GridView\Filters\DropdownFilter::class,
-                        'data' => ['site' => 'site','admin' => 'admin']
-                    ]
-                ],
-                'key',
-                'value',
+                "name",
+                "text",
+                "number",
                 [
                     'label' => 'Əməliyyatlar',
                     'class' => Itstructure\GridView\Columns\ActionColumn::class,
@@ -25,8 +22,8 @@
                         'edit' => function ($data) {
                             return route('admin.reviews.edit', $data->id);
                         },
-                         'remove' => function ($data) {
-                            return route('admin.reviews.destroy', $data->id);
+                         'delete' => function ($data) {
+                            return route('admin.reviews.delete', $data->id);
                         }
                     ]
                 ]

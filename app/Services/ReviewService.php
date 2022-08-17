@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Actions\UploadImage;
 use App\Http\Requests\backend\ReviewSaveRequest;
 use App\Models\Review;
 use DomainException;
@@ -18,10 +19,13 @@ class ReviewService
             'number'  => $request->getNumber(),
         ]);
 
+
         if ($request->getImage())
         {
+            $image = UploadImage::uploadImage($request->file('image'),'reviews');
+
             $model->fill([
-                'image'    => $request->getImage(),
+                'image'    => $image,
             ]);
         }
 

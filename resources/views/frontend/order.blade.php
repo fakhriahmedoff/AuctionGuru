@@ -42,7 +42,7 @@
                                             class="text-color-danger">*</span></label>
                                 <input type="file"
                                        class="form-control h-auto py-2 @if($errors->first('uploaded_files')) is-invalid @endif"
-                                       name="uploaded_files[]" multiple
+                                       name="uploaded_files"
                                        required="">
 
                                 @foreach($errors->all() as $err)

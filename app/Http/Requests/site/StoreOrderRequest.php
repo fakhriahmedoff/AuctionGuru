@@ -29,10 +29,12 @@ class StoreOrderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'           => 'required',
-            'email'          => 'required',
-            'message'        => 'nullable',
-            'uploaded_files' => 'required',
+            'name'              => 'required',
+            'email'             => 'required',
+            'message'           => 'nullable',
+            'uploaded_files'    => 'required',
+            'uploaded_files.*'  => 'image',
+
         ];
     }
 

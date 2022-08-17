@@ -13,6 +13,10 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
     //crud
     Route::resource('/texts', \App\Http\Controllers\backend\TextController::class);
     Route::resource('/reviews', \App\Http\Controllers\backend\ReviewController::class);
+    Route::resource('/orders', \App\Http\Controllers\backend\OrderController::class)->except('create');
+    Route::resource('/plans', \App\Http\Controllers\backend\PlanController::class)->except('create');
+
+    //deletion
     Route::get('/reviews/delete/{review}', [\App\Http\Controllers\backend\ReviewController::class,'delete'])->name('reviews.delete');
 
 

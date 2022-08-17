@@ -1,24 +1,23 @@
 <?php
-declare(strict_types=1);
 
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Order;
+use App\Models\Plan;
+use App\Models\Text;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\View\Factory;
 use Illuminate\View\View;
 use Itstructure\GridView\DataProviders\EloquentDataProvider;
 
-class OrderController extends Controller
+class PlanController extends Controller
 {
-
     public function index(): Application|Factory|View
     {
-        $dataProvider = new EloquentDataProvider(Order::query()->orderBy('id','desc'));
+        $dataProvider = new EloquentDataProvider(Plan::query());
 
-        return view('backend.orders.index', [
+        return view('backend.plans.index', [
             'dataProvider' => $dataProvider
         ]);
     }

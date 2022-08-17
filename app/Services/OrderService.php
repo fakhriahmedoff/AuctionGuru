@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+use App\Actions\UploadImage;
 use App\Http\Requests\site\StoreOrderRequest;
 use App\Models\Order;
 use Illuminate\Http\UploadedFile;
@@ -24,12 +25,16 @@ class OrderService
             'message'   => $request->getMessage(),
         ]);
 
-        dd($request->uploaded_files);
 
+        if($request->getUploadedFiles())
+        {
+            $image = $this->storeImages($request->getUploadedFiles());
 
-//        $images = $this->storeImages($request->getUploadedFiles());
+            $model->fill([
+                'uploaded_files' => json_encode($image),
+            ]);
+        }
 
-//        dd($images);
         if (!$model->save()) {
             throw new DomainException('Order save failed');
         }
@@ -37,17 +42,14 @@ class OrderService
         return $model;
     }
 
-//    private function storeImages(array $images)
-//    {
-//        $filenames = [];
-//        foreach ($images as $image){
-//            $file= $image;
-//            $filename= date('YmdHi').$file->getClientOriginalName();
-//            $file->move(public_path('public/Image'), $filename);
-//            $filenames[] = $filename;
-//        }
-//
-//        return $filenames;
-//    }
+    private function storeImages(array $images): array
+    {
+        $return = [];
+        foreach ($images as $image){
+            $return[] = UploadImage::uploadImage($image, 'sheets');
+        }
+
+        return $return;
+    }
 }
 

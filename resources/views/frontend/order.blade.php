@@ -6,7 +6,7 @@
         <div class="pt-lg-5 pt-5"></div>
         <div class="container shop py-3 mt-lg-5 pt-5 ">
 
-            <form role="form" method="post" action="{{route('order')}}">
+            <form role="form" method="post" action="{{route('order')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-lg-7 mb-4 mb-lg-0">
@@ -42,7 +42,7 @@
                                             class="text-color-danger">*</span></label>
                                 <input type="file"
                                        class="form-control h-auto py-2 @if($errors->first('uploaded_files')) is-invalid @endif"
-                                       name="uploaded_files"
+                                       name="uploaded_files[]" multiple
                                        required="">
 
                                 @foreach($errors->all() as $err)

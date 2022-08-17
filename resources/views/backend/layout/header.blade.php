@@ -134,7 +134,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{route('admin.logout')}}" class="nav-link ">
+                                <a href="{{route('admin.orders.index')}}" class="nav-link ">
                                     -- <i class="fas fa-user-friends"></i>
                                     <p>
                                         Sifarişlər
@@ -155,7 +155,7 @@
 
 
                     <li class="nav-item">
-                        <a href="{{route('admin.reviews.index')}}" class="nav-link ">
+                        <a href="{{route('admin.plans.index')}}" class="nav-link ">
                             <i class="fas fa-clone"></i>
                             <p>
                                 Paketlər

@@ -12,6 +12,9 @@ RUN apt-get update && apt-get install -y libmagickwand-dev --no-install-recommen
 RUN printf "\n" | pecl install imagick
 RUN docker-php-ext-enable imagick
 
+# Installing opcache
+RUN docker-php-ext-install opcache
+
 # Installing php-redis extension via pecl.
 RUN pecl install -o -f redis && rm -rf /tmp/pear
 
@@ -23,6 +26,7 @@ RUN docker-php-ext-install pdo pdo_mysql mysqli bcmath intl  -j$(nproc) gd zip
 
 # Copy configuration files
 COPY ./php.ini /usr/local/etc/php/conf.d/uploads.ini
+COPY docker/php/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 
 # Creating user for container.
 RUN groupadd -g 1000 appuser && useradd -r -u 1000 -g appuser appuser

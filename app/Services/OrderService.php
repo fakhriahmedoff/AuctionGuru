@@ -24,9 +24,12 @@ class OrderService
             'message'   => $request->getMessage(),
         ]);
 
-        $images = $this->storeImages($request->getUploadedFiles());
+        dd($request->uploaded_files);
 
-        dd($images);
+
+//        $images = $this->storeImages($request->getUploadedFiles());
+
+//        dd($images);
         if (!$model->save()) {
             throw new DomainException('Order save failed');
         }
@@ -34,17 +37,17 @@ class OrderService
         return $model;
     }
 
-    private function storeImages(array $images)
-    {
-        $filenames = [];
-        foreach ($images as $image){
-            $file= $image;
-            $filename= date('YmdHi').$file->getClientOriginalName();
-            $file->move(public_path('public/Image'), $filename);
-            $filenames[] = $filename;
-        }
-
-        return $filenames;
-    }
+//    private function storeImages(array $images)
+//    {
+//        $filenames = [];
+//        foreach ($images as $image){
+//            $file= $image;
+//            $filename= date('YmdHi').$file->getClientOriginalName();
+//            $file->move(public_path('public/Image'), $filename);
+//            $filenames[] = $filename;
+//        }
+//
+//        return $filenames;
+//    }
 }
 

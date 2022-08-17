@@ -73,33 +73,32 @@
                                                 <a class="dropdown-item " data-hash data-hash-offset="0"
                                                    data-hash-offset-lg="70"
 
-                                                   href="@if(Request::route()->getName() != 'home') {{route('home')}}@endif#home">Home</a>
+
+                                                   href="@if(Request::route()->getName() != 'home') {{route('home')}}@endif#home">{{$texts['home']}}</a>
                                             </li>
                                             <li class="dropdown">
                                                 <a class="dropdown-item" data-hash data-hash-offset="0"
                                                    data-hash-offset-lg="70"
-                                                   href="@if(Request::route()->getName() != 'home') {{route('home')}}@endif#pricing">Pricing</a>
+                                                   href="@if(Request::route()->getName() != 'home') {{route('home')}}@endif#pricing">{{$texts['pricing']}}</a>
                                             </li>
                                             <li class="dropdown">
                                                 <a class="dropdown-item" data-hash data-hash-offset="0"
                                                    data-hash-offset-lg="70"
-                                                   href="@if(Request::route()->getName() != 'home') {{route('home')}}@endif#about-us">About
-                                                    us</a>
+                                                   href="@if(Request::route()->getName() != 'home') {{route('home')}}@endif#about-us">{{$texts['about-us']}}
+                                                </a>
                                             </li>
                                             <li class="dropdown">
                                                 <a class="dropdown-item" data-hash data-hash-offset="0"
                                                    data-hash-offset-lg="70"
-                                                   href="@if(Request::route()->getName() != 'home') {{route('home')}}@endif#we-provide">What
-                                                    we provide</a>
+                                                   href="@if(Request::route()->getName() != 'home') {{route('home')}}@endif#we-provide">{{$texts['what-we-provide']}}</a>
                                             </li>
                                             <li class="dropdown">
                                                 <a class="dropdown-item" data-hash data-hash-offset="0"
                                                    data-hash-offset-lg="90"
-                                                   href="@if(Request::route()->getName() != 'home') {{route('home')}}@endif#reviews">Reviews</a>
+                                                   href="@if(Request::route()->getName() != 'home') {{route('home')}}@endif#reviews">{{$texts['reviews']}}</a>
                                             </li>
                                             <li class="dropdown">
-                                                <a class="dropdown-item @if(Request::route()->getName() == 'orderPage') active @endif" href="{{route('orderPage')}}">Order
-                                                    Now</a>
+                                                <a class="dropdown-item @if(Request::route()->getName() == 'orderPage') active @endif" href="{{route('orderPage')}}">{{$texts['order-now']}}</a>
                                             </li>
                                             <li class="dropdown ms-lg-auto no-line-effect">
                                                 {{--                                                <a href="#" class="dropdown-item dropdown-toggle">USD</a>--}}
@@ -108,23 +107,23 @@
                                                 {{--                                                    <li><a href="#" class="dropdown-item">BRL</a></li>--}}
                                                 {{--                                                </ul>--}}
                                             </li>
-                                            <li class="dropdown no-line-effect">
-                                                <a href="#" class="dropdown-item dropdown-toggle">ENG</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="#" class="dropdown-item"><img
-                                                                    src="{{asset('frontend')}}/images/img-blank.gif"
-                                                                    class="flag flag-us" alt="English">
-                                                            English</a></li>
-                                                    <li><a href="#" class="dropdown-item"><img
-                                                                    src="{{asset('frontend')}}/images/img-blank.gif"
-                                                                    class="flag flag-es"
-                                                                    alt="Espa&ntilde;ol"> Espa&ntilde;ol</a></li>
-                                                    <li><a href="#" class="dropdown-item"><img
-                                                                    src="{{asset('frontend')}}/images/img-blank.gif"
-                                                                    class="flag flag-fr"
-                                                                    alt="Fran&ccedil;aise"> Fran&ccedil;aise</a></li>
-                                                </ul>
-                                            </li>
+{{--                                            <li class="dropdown no-line-effect">--}}
+{{--                                                <a href="#" class="dropdown-item dropdown-toggle">ENG</a>--}}
+{{--                                                <ul class="dropdown-menu">--}}
+{{--                                                    <li><a href="#" class="dropdown-item"><img--}}
+{{--                                                                    src="{{asset('frontend')}}/images/img-blank.gif"--}}
+{{--                                                                    class="flag flag-us" alt="English">--}}
+{{--                                                            English</a></li>--}}
+{{--                                                    <li><a href="#" class="dropdown-item"><img--}}
+{{--                                                                    src="{{asset('frontend')}}/images/img-blank.gif"--}}
+{{--                                                                    class="flag flag-es"--}}
+{{--                                                                    alt="Espa&ntilde;ol"> Espa&ntilde;ol</a></li>--}}
+{{--                                                    <li><a href="#" class="dropdown-item"><img--}}
+{{--                                                                    src="{{asset('frontend')}}/images/img-blank.gif"--}}
+{{--                                                                    class="flag flag-fr"--}}
+{{--                                                                    alt="Fran&ccedil;aise"> Fran&ccedil;aise</a></li>--}}
+{{--                                                </ul>--}}
+{{--                                            </li>--}}
                                         </ul>
                                     </nav>
                                 </div>

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 
@@ -9,6 +10,12 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
     Route::get('/logout', [\App\Http\Controllers\backend\AuthController::class, 'logout'])->name('logout');
     Route::get('/update', [\App\Http\Controllers\backend\AuthController::class, 'editAdminDetails'])->name('editAdminDetails');
     Route::post('/update', [\App\Http\Controllers\backend\AuthController::class, 'updateAdminDetails'])->name('updateAdminDetails');
+    //crud
+    Route::resource('/texts', \App\Http\Controllers\backend\TextController::class);
+    Route::resource('/reviews', \App\Http\Controllers\backend\ReviewController::class);
+    Route::get('/reviews/delete/{review}', [\App\Http\Controllers\backend\ReviewController::class,'delete'])->name('reviews.delete');
+
+
 });
 
 //auth

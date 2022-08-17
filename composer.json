@@ -8,7 +8,7 @@
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
         "i80586/laravel-form-fields": "^1.0",
-        "itstructure/laravel-grid-view": "^1.0",
+        "itstructure/laravel-grid-view": "dev-master",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7"

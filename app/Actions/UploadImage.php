@@ -17,7 +17,7 @@ class UploadImage
         // Filename to store
         $fileNameToStore = Str::random(16).'_'.time().'.'.$extension;
         // Upload Image
-        $path = $uploadedFile->storeAs('public/'.$folder,$fileNameToStore);
+        $path = $uploadedFile->move('images/'.$folder,$fileNameToStore);
 
         return $path;
     }

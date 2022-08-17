@@ -39,7 +39,7 @@
                                             'label' => 'Şəkil',
                                             'errorLabel' => $errors->first('image')
                                         ],'file') !!}
-                                        <img src="{{asset('storage/app')}}/{{$edit ? $review->image : null}}" width="250px" alt="">
+                                        <img class="mt-3 " src="{{asset('')}}{{$edit ? $review->image : null}}" width="250px" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">

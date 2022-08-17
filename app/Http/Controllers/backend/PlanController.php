@@ -37,9 +37,9 @@ class PlanController extends Controller
         //
     }
 
-    public function edit($id)
+    public function edit(Plan $plan)
     {
-        //
+        return view('backend.plans.save');
     }
 
     public function update(Request $request, $id)

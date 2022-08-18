@@ -5,21 +5,36 @@ namespace App\Services;
 
 use App\Http\Requests\backend\PlanSaveRequest;
 use App\Models\Plan;
+use App\Models\PlanText;
 
 class PlanService
 {
     public function savePlan(PlanSaveRequest $request, ?Plan $plan = null): void
     {
-        $model = $text ?? new Plan();
+        $model = $plan ?? new Plan();
         $model->fill([
-            'group' => $request->getGroup(),
-            'value' => $request->getValue(),
-            'key'   => $request->getKey(),
+            'name'  => $request->getName(),
+            'price' => $request->getPrice(),
         ]);
 
+        if ($plan)
+        $this->savePlanTexts($request->getPlanTexts(), $plan->id);
 
         if (!$model->save()) {
             throw new DomainException('Plan save failed');
+        }
+    }
+
+    private function savePlanTexts(array $texts, int $plan): void
+    {
+        PlanText::where('plan_id',$plan)->delete();
+
+        foreach ($texts as $text)
+        {
+            PlanText::create([
+                'plan_id'  => $plan,
+                'text' => $text,
+            ]);
         }
     }
 

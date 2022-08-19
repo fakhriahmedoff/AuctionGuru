@@ -48,5 +48,7 @@
 {{--<script src="{{asset('backend')}}/dist/js/demo.js"></script>--}}
 {{--<!-- AdminLTE dashboard demo (This is only for demo purposes) -->--}}
 {{--<script src="{{asset('backend')}}/dist/js/pages/dashboard.js"></script>--}}
+
+        @yield('additional_scripts')
 </body>
 </html>

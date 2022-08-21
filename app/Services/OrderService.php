@@ -20,9 +20,11 @@ class OrderService
     {
         $model = $order ?? new Order();
         $model->fill([
-            'name'      => $request->getName(),
-            'email'     => $request->getEmail(),
-            'message'   => $request->getMessage(),
+            'name'              => $request->getName(),
+            'email'             => $request->getEmail(),
+            'message'           => $request->getMessage(),
+            'plan_id'           => $request->getPlan(),
+            'payment_method'    => $request->getPaymentMethod(),
         ]);
 
 
@@ -36,7 +38,7 @@ class OrderService
         }
 
         if (!$model->save()) {
-            throw new DomainException('Order save failed');
+            throw new \DomainException('Order save failed');
         }
 
         return $model;

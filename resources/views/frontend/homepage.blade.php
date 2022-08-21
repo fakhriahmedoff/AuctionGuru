@@ -1,6 +1,7 @@
 @extends('frontend.layout.master')
 
 
+
 @section('additional_styles')
 
     <style>
@@ -154,6 +155,10 @@
     </style>
 
 @endsection
+
+@section('meta_title',$config->homepage_title)
+@section('meta_description',$config->homepage_meta_desc)
+
 @section('content')
 
     <div role="main" class="main">
@@ -169,7 +174,7 @@
 											<span
                                                 class="d-inline-block text-color-grey positive-ls-3 custom-font-size-1 custom-letter-spacing-1 appear-animation"
                                                 data-appear-animation="fadeInLeftShorter"
-                                                data-appear-animation-delay="1000">INTRODUCING</span>
+                                                data-appear-animation-delay="1000">{{$texts['introducing']}}</span>
 										</span>
 										<svg
                                             class="d-none d-sm-block position-absolute left-0 top-50pct transform3dy-n50 mt-2"
@@ -182,25 +187,25 @@
 									</span>
                             <strong
                                 class="font-weight-extra-bold text-3 text-sm-3-4 text-md-4 text-lg-2 text-xl-3 d-inline-block negative-ls-2 position-relative z-index-1 appear-animation"
-                                data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1200">Auction
-                                sheet translation
+                                data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1200">
+                                {{$texts['auction-sheet-tend']}}
                             </strong>
                         </h1>
                         <p class="font-weight-light text-5 text-center text-sm-end mb-4 appear-animation"
                            data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1400">
-                            Get your auction sheet translated now!
+                            {{$texts['get-your-auctioend']}}
                         </p>
                         <div
                             class="d-flex flex-column flex-sm-row align-items-center justify-content-end mb-4 appear-animation"
                             data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1600">
                             <span class="font-weight-light text-4">Starting at</span>
-                            <span class="text-color-primary font-weight-bold text-11 my-3 my-sm-0 mx-4">$15</span>
+                            <span class="text-color-primary font-weight-bold text-11 my-3 my-sm-0 mx-4">{{$texts['15']}}</span>
                             <a href="{{route('order')}}"
-                               class="btn btn-primary btn-rounded font-weight-bold text-4 px-5 py-3">Order now!</a>
+                               class="btn btn-primary btn-rounded font-weight-bold text-4 px-5 py-3">{{$texts['order-now']}}</a>
                         </div>
                         <a href="#about-us"
                            class="d-inline-flex align-items-center text-color-default text-color-hover-primary text-decoration-none font-weight-medium ms-3 ms-sm-0 appear-animation"
-                           data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1800">Learn More <i
+                           data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1800">{{$texts['learn-more']}} <i
                                 class="icons icon-arrow-right text-1 ms-2"></i></a>
                     </div>
                     <div class="col-lg-6 align-self-xl-stretch position-relative order-1 order-lg-2">
@@ -234,69 +239,31 @@
                 <div class="section-title">
                     <h2 class="font-weight-bold text-9 text-center mb-2 mt-5 line-height-2 appear-animation animated maskUp appear-animation-visible"
                         data-appear-animation="maskUp" data-appear-animation-delay="600"
-                        style="animation-delay: 600ms;">Pricing</h2>
+                        style="animation-delay: 600ms;">{{$texts['pricing']}}</h2>
                     <br>
-                    <p class="mb-5 appear-animation animated maskUp appear-animation-visible">Magnam dolores commodi
-                        suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur
-                        velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-                        in iste officiis commodi quidem hic quas.</p>
+                    <p class="mb-5 appear-animation animated maskUp appear-animation-visible">
+                        {{$texts['magnam-dolores-end']}}
+                    </p>
                 </div>
 
                 <div class="row appear-animation animated maskUp appear-animation-visible">
 
-                    <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="zoom-im" data-aos-delay="100">
+                    @foreach($plans as $plan)
+                        <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="zoom-im" data-aos-delay="100">
                         <div class="box">
-                            <h3>Free</h3>
-                            <h4><sup>$</sup>0<span> / month</span></h4>
+                            <h3>{{$plan->name}}</h3>
+                            <h4><sup>$</sup>{{$plan->price}}<span> </span></h4>
                             <ul>
-                                <li>Aida dere</li>
-                                <li>Nec feugiat nisl</li>
-                                <li>Nulla at volutpat dola</li>
-                                <li class="na">Pharetra massa</li>
-                                <li class="na">Massa ultricies mi</li>
+                                @foreach($plan->planTexts as $planText)
+                                    <li>{{$planText->text}}</li>
+                                @endforeach
                             </ul>
                             <div class="btn-wrap">
-                                <a href="{{route('order')}}" class="btn-buy">Order now</a>
+                                <a href="{{route('order')}}?id={{$plan->id}}" class="btn-buy">{{$texts['order-now']}}</a>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 mt-4 mt-md-0 aos-init aos-animate" data-aos="zoom-in"
-                         data-aos-delay="100">
-                        <div class="box featured">
-                            <h3>Business</h3>
-                            <h4><sup>$</sup>19<span> / month</span></h4>
-                            <ul>
-                                <li>Aida dere</li>
-                                <li>Nec feugiat nisl</li>
-                                <li>Nulla at volutpat dola</li>
-                                <li>Pharetra massa</li>
-                                <li class="na">Massa ultricies mi</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="{{route('order')}}" class="btn-buy">Order now</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 aos-init aos-animate" data-aos="zoom-in"
-                         data-aos-delay="100">
-                        <div class="box">
-                            <h3>Developer</h3>
-                            <h4><sup>$</sup>29<span> / month</span></h4>
-                            <ul>
-                                <li>Aida dere</li>
-                                <li>Nec feugiat nisl</li>
-                                <li>Nulla at volutpat dola</li>
-                                <li>Pharetra massa</li>
-                                <li>Massa ultricies mi</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="{{route('order')}}" class="btn-buy">Order now</a>
-                            </div>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
 
             </div>
@@ -414,13 +381,11 @@
                 <div class="section-title">
                     <h2 class="font-weight-bold text-9 text-center mb-2 mt-5 line-height-2 appear-animation animated maskUp appear-animation-visible"
                         data-appear-animation="maskUp" data-appear-animation-delay="600"
-                        style="animation-delay: 600ms;">Japanese Auction Sheet Translation Services
+                        style="animation-delay: 600ms;">{{$texts['japanese-auctioend']}}
                     </h2>
                     <br>
-                    <p class="mb-5 appear-animation animated maskUp appear-animation-visible text-center">Are you
-                        thinking of buying
-                        a car at a Japanese car auction? That’s a smart choice, because the quality of pre-owned
-                        Japanese vehicles is second to none!
+                    <p class="mb-5 appear-animation animated maskUp appear-animation-visible text-center">
+                        {{$texts['are-you-thinkinend']}}
                     </p>
                 </div>
 
@@ -428,27 +393,18 @@
                     <div class="col-lg-8 col-xl-6 pb-5 pb-lg-0 mb-lg-5 mb-xl-0">
 
                         <p class="font-weight-bold text-4-5 line-height-6 mb-4 appear-animation"
-                           data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">Lorem ipsum dolor
-                            sit amet, consectetur adipiscing elit.</p>
+                           data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">{{$texts['lorem-ipsum-dolend']}}</p>
                         <p class="text-3-5 appear-animation" data-appear-animation="fadeInUpShorter"
-                           data-appear-animation-delay="1000">But to make the best possible choice, you need to know
-                            exactly what you’re getting. All cars sold in Japan undergo a thorough inspection before
-                            they’re put on the market. So getting a complete and accurate translation of the auction
-                            inspector’s report is essential before making your purchase.
+                           data-appear-animation-delay="1000">
+                            {{$texts['but-to-make-theend']}}
                         </p>
                         <p class="text-3-5 font-weight-bold appear-animation" data-appear-animation="fadeInUpShorter"
-                           data-appear-animation-delay="1000">The problem: auction sheets can be extremely technical and
-                            difficult to understand.
+                           data-appear-animation-delay="1000">
+                            {{$texts['the-problem-aucend']}}
                         </p>
                         <p class="text-3-5 pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter"
-                           data-appear-animation-delay="1000">EFJ is here to help! With over a decade of experience in
-                            the
-                            Japanese car auction industry, our professionals are trusted experts in auction sheet
-                            translation. We work hard to ensure that our clients have all the information they need to
-                            make
-                            the right car-buying decision – and avoid costly buying mistakes due to inaccurate or
-                            incomplete
-                            information.
+                           data-appear-animation-delay="1000">
+                            {{$texts['efj-is-here-to-end']}}
                         </p>
 {{--                        <a href="#features" data-hash data-hash-offset="0" data-hash-offset-lg="70"--}}
 {{--                           class="btn btn-primary btn-rounded font-weight-bold text-3-5 px-5 py-3 appear-animation"--}}
@@ -493,34 +449,30 @@
                 <div class="col-lg-7 col-xl-6 pb-4">
                     <div class="overflow-hidden mb-1">
                         <span class="d-block text-color-default custom-letter-spacing-1 text-3-5 mb-0 appear-animation"
-                              data-appear-animation="maskUp" data-appear-animation-delay="400">Lorem text</span>
+                              data-appear-animation="maskUp" data-appear-animation-delay="400">{{$texts['lorem-text']}}</span>
                     </div>
                     <div class="overflow-hidden mb-4">
                         <h2 class="font-weight-bold text-9 negative-ls-05 line-height-2 mb-0 appear-animation"
-                            data-appear-animation="maskUp" data-appear-animation-delay="600">What are the EFJ's
-                            advantages?
+                            data-appear-animation="maskUp" data-appear-animation-delay="600"> {{$texts['what-are-the-efend']}}
                         </h2>
                     </div>
                     <div class="efj-advantages">
                         <ul>
-                            <li>Fourteen years of experience in car inspection, maintenance, auction bidding,
-                                and price negotiation
+                            <li>{{$texts['fourteen-years-end']}}
                             </li>
-                            <li>Professional understanding of automotive terminology used in auction
-                                sheets
+                            <li>{{$texts['professional-unend']}}
                             </li>
-                            <li>Precise and thorough translation by university-educated professionals
+                            <li>{{$texts['precise-and-thoend']}}
                             </li>
-                            <li>EFJ is an authorized Japanese car exporter working in partnership with Japanese
-                                auction houses, local dealerships, and inspection agencies
+                            <li>{{$texts['efj-is-an-authoend']}}
                             </li>
-                            <li>Cars are more than our business – they are our passion!
+                            <li>{{$texts['cars-are-more-tend']}}
                             </li>
                         </ul>
                     </div>
                     <a href="demo-product-landing-checkout.html"
                        class="btn btn-primary btn-rounded font-weight-bold text-3-5 px-5 py-3 appear-animation"
-                       data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1200">Buy Now!</a>
+                       data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1200">{{$texts['order-now']}}</a>
                 </div>
             </div>
         </div>
@@ -581,18 +533,15 @@
                                 {{--                                <span class="d-block text-color-light custom-letter-spacing-1 text-3-5 opacity-5 mb-0">Japanese Auction Sheet Translation Services</span>--}}
                                 {{--                            </div>--}}
                             </div>
-                            <h2 class="text-color-light font-weight-bold ls-0 text-9 mb-4">What details will EFJ’s
-                                auction
-                                sheet translation service provide?
+                            <h2 class="text-color-light font-weight-bold ls-0 text-9 mb-4">{{$texts['what-details-wiend']}}
                             </h2>
                             <p class="text-3-5 text-color-light opacity-5">
                             <div id="section-en-description-1" class="page-content font-weight-light">
                                 <ul>
-                                    <li>Complete vehicle ownership and maintenance history</li>
-                                    <li>Independent inspector’s notes describing the car’s mechanical, electrical, and
-                                        structural condition
+                                    <li>{{$texts['complete-vehiclend']}}</li>
+                                    <li>{{$texts['independent-insend']}}
                                     </li>
-                                    <li>Detailed assessment of exterior and interior flaws</li>
+                                    <li>{{$texts['detailed-assessend']}}</li>
                                 </ul>
                             </div>
                             </p>
@@ -601,24 +550,22 @@
                             <div class="d-flex flex-wrap align-items-center justify-content-lg-end">
 									<span class="text-color-primary font-weight-bold text-11 line-height-1 me-4">
 										<span
-                                            class="d-block text-color-white custom-font-size-2 line-height-3 font-weight-light opacity-9">Starting at</span>
+                                            class="d-block text-color-white custom-font-size-2 line-height-3 font-weight-light opacity-9">{{$texts['starting-at']}}</span>
 										$15
 									</span>
                                 <a href="{{route('order')}}"
-                                   class="btn btn-primary btn-rounded font-weight-bold text-3-5 px-5 py-3">Order now!</a>
+                                   class="btn btn-primary btn-rounded font-weight-bold text-3-5 px-5 py-3">{{$texts['order-now']}}</a>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <h3 class="text-color-light text-4 font-weight-bold mb-2">GENERAL</h3>
+                            <h3 class="text-color-light text-4 font-weight-bold mb-2">{{$texts['general']}}</h3>
                         </div>
                     </div>
                     <div class="row">
                         <p class="text-color-white">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate veritatis, voluptates.
-                            Accusamus accusantium animi aperiam commodi cumque dolore earum eveniet facilis fugit iusto
-                            magnam magni numquam, qui soluta ullam ut.
+                            {{$texts['lor-ipsum-dolorend']}}
                         </p>
                         {{--                        <div class="col-md-6 col-lg-4 pe-lg-4 py-lg-2">--}}
                         {{--                            <ul class="list list-light list-unstyled mb-0">--}}
@@ -678,11 +625,11 @@
                         <div class="overflow-hidden mb-1">
                             <span
                                 class="d-block text-color-default custom-letter-spacing-2 text-3-5 mb-0 appear-animation"
-                                data-appear-animation="maskUp" data-appear-animation-delay="300">FROM BUYERS</span>
+                                data-appear-animation="maskUp" data-appear-animation-delay="300">{{$texts['from-buyers']}}</span>
                         </div>
                         <div class="overflow-hidden mb-4">
                             <h2 class="font-weight-bold negative-ls-05 text-9 mb-0 appear-animation"
-                                data-appear-animation="maskUp" data-appear-animation-delay="500">Reviews</h2>
+                                data-appear-animation="maskUp" data-appear-animation-delay="500">{{$texts['reviews']}}</h2>
                         </div>
                     </div>
                 </div>
@@ -692,42 +639,25 @@
                         <div
                             class="owl-carousel owl-theme nav-outside nav-style-1 nav-arrows-thin nav-dark nav-font-size-lg mb-0"
                             data-plugin-options="{'responsive': {'0': {'items': 1, 'nav': false, 'dots': true}, '476': {'items': 1}, '768': {'items': 1}, '992': {'items': 1}, '1200': {'items': 1}}, 'dots': false, 'nav': true}">
+                            @foreach($reviews as $review)
                             <div>
                                 <div class="row align-items-center justify-content-center text-center text-md-start">
                                     <div class="col-10 col-md-3 col-lg-1-5 mb-4 mb-md-0">
-                                        <img src="{{asset('frontend')}}/images/product-landing-client-1.jpg"
+                                        <img src="{{asset($review->image??'/frontend/images/product-landing-client-1.jpg')}}"
                                              class="img-fluid rounded-circle border border-width-10 custom-border-color-3"
                                              width="160" alt="">
                                     </div>
                                     <div class="col-md-9 col-lg-4-5 ps-lg-4">
-                                        <input type="text" class="rating-invisible" value="5" title=""
+                                        <input type="text" class="rating-invisible" value="{{$review->number}}" title=""
                                                data-plugin-star-rating
                                                data-plugin-options="{'displayOnly': true, 'color': 'primary', 'extraClass': 'text-4'}">
-                                        <p class="text-4 line-height-9 pe-lg-5 mt-2">Vestibulum auctor felis eget orci
-                                            semper vestibulum. Pellentesque ultricies nibh gravida, accumsan libero
-                                            luctus, molestie nunc. In nibh ipsum, blandit id.</p>
-                                        <strong class="text-color-dark font-weight-bold text-4">Jennifer Doe</strong>
+                                        <p class="text-4 line-height-9 pe-lg-5 mt-2">{{$review->text}}</p>
+                                        <strong class="text-color-dark font-weight-bold text-4">{{$review->name}}</strong>
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <div class="row align-items-center justify-content-center text-center text-md-start">
-                                    <div class="col-10 col-md-3 col-lg-1-5 mb-4 mb-md-0">
-                                        <img src="{{asset('frontend')}}/images/product-landing-client-2.jpg"
-                                             class="img-fluid rounded-circle border border-width-10 custom-border-color-3"
-                                             width="160" alt="">
-                                    </div>
-                                    <div class="col-md-9 col-lg-4-5 ps-lg-4">
-                                        <input type="text" class="rating-invisible" value="5" title=""
-                                               data-plugin-star-rating
-                                               data-plugin-options="{'displayOnly': true, 'color': 'primary', 'extraClass': 'text-4'}">
-                                        <p class="text-4 line-height-9 pe-lg-5 mt-2">Vestibulum auctor felis eget orci
-                                            semper vestibulum. Pellentesque ultricies nibh gravida, accumsan libero
-                                            luctus, molestie nunc. In nibh ipsum, blandit id.</p>
-                                        <strong class="text-color-dark font-weight-bold text-4">Monica Doe</strong>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+
                         </div>
                     </div>
                 </div>
@@ -958,24 +888,21 @@
             <div class="row justify-content-center py-5 my-4">
                 <div class="col-sm-10 col-md-9 col-lg-4 text-center mb-5 mb-lg-0">
                     <i class="icons icon-earphones-alt text-color-primary text-9"></i>
-                    <h2 class="text-color-dark font-weight-bold text-4 line-height-1 mt-4 mb-0">CUSTOMER SUPPORT</h2>
-                    <span class="d-block text-color-dark mb-2">Need Assistance?</span>
-                    <p class="font-weight-light px-lg-3 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Duis nec vestibulum magna, et dapib.</p>
+                    <h2 class="text-color-dark font-weight-bold text-4 line-height-1 mt-4 mb-0">{{$texts['customer-supporend']}}</h2>
+                    <span class="d-block text-color-dark mb-2">{{$texts['need-assistance']}}</span>
+                    <p class="font-weight-light px-lg-3 mb-0">{{$texts['lorem-ipsum-dolend']}}</p>
                 </div>
                 <div class="col-sm-10 col-md-9 col-lg-4 text-center mb-5 mb-lg-0">
                     <i class="icons icon-credit-card text-color-primary text-9"></i>
-                    <h2 class="text-color-dark font-weight-bold text-4 line-height-1 mt-4 mb-0">SECURED PAYMENT</h2>
-                    <span class="d-block text-color-dark mb-2">Safe &amp; Fast</span>
-                    <p class="font-weight-light px-lg-3 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Duis nec vestibulum magna, et dapibus lacus. Lorem ipsum dolor sit amet.</p>
+                    <h2 class="text-color-dark font-weight-bold text-4 line-height-1 mt-4 mb-0">{{$texts['secured-payment']}}</h2>
+                    <span class="d-block text-color-dark mb-2">{{$texts['safe-fast']}}</span>
+                    <p class="font-weight-light px-lg-3 mb-0">{{$texts['bottomtextvcv']}}</p>
                 </div>
                 <div class="col-sm-10 col-md-9 col-lg-4 text-center">
                     <i class="icons icon-action-undo text-color-primary text-9"></i>
-                    <h2 class="text-color-dark font-weight-bold text-4 line-height-1 mt-4 mb-0">RETURNS</h2>
-                    <span class="d-block text-color-dark mb-2">Easy &amp; Free</span>
-                    <p class="font-weight-light px-lg-3 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Duis nec vestibulum magna, et dapib.</p>
+                    <h2 class="text-color-dark font-weight-bold text-4 line-height-1 mt-4 mb-0">{{$texts['returns']}}</h2>
+                    <span class="d-block text-color-dark mb-2">{{$texts['easy-free']}}</span>
+                    <p class="font-weight-light px-lg-3 mb-0">{{$texts['bottomtext2']}}</p>
                 </div>
             </div>
         </div>
@@ -989,9 +916,8 @@
                                 <i class="icons icon-envelope text-color-dark text-11"></i>
                             </div>
                             <div class="feature-box-info">
-                                <h4 class="font-weight-bold line-height-1 mb-1">Subscribe To Our Newsletter</h4>
-                                <p class="line-height-5 line-height-sm-1 mb-0">Get all the latest information on Events,
-                                    Sales and Offers.</p>
+                                <h4 class="font-weight-bold line-height-1 mb-1">{{$texts['subscribe-to-ouend']}}</h4>
+                                <p class="line-height-5 line-height-sm-1 mb-0">{{$texts['get-all-the-latend']}}</p>
                             </div>
                         </div>
                     </div>
@@ -1003,10 +929,10 @@
                         <form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST" class="mw-100">
                             <div class="input-group">
                                 <input class="form-control form-control-sm bg-light border-0 px-4 text-3"
-                                       placeholder="Your E-mail Address" name="newsletterEmail" id="newsletterEmail"
+                                       placeholder="{{$texts['your-e-mail-addend']}}" name="newsletterEmail" id="newsletterEmail"
                                        type="email">
                                 <button class="btn btn-primary  text-color-light text-2 py-3 px-5" type="submit"><strong
-                                        class="position-relative top-1">SUBSCRIBE NOW!</strong></button>
+                                        class="position-relative top-1">{{$texts['subscribe-now']}}</strong></button>
                             </div>
                         </form>
                     </div>

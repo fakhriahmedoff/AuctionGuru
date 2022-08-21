@@ -15,6 +15,7 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
     Route::resource('/reviews', \App\Http\Controllers\backend\ReviewController::class);
     Route::resource('/orders', \App\Http\Controllers\backend\OrderController::class)->except('create');
     Route::resource('/plans', \App\Http\Controllers\backend\PlanController::class)->except('create');
+    Route::resource('/configs', \App\Http\Controllers\backend\ConfigController::class)->except('create','store','show','index');
 
     //deletion
     Route::get('/reviews/delete/{review}', [\App\Http\Controllers\backend\ReviewController::class,'delete'])->name('reviews.delete');

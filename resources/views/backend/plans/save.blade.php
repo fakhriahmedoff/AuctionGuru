@@ -51,13 +51,14 @@
                                     @foreach($plan->planTexts as $item)
                                         <div class="form-group">
                                             <label for="price">Plan teksti</label>
-                                            <input type="text" name="plan_texts[]"  style="width: 90%" value="{{$item->text}}" class="form-control d-inline-block">
+                                            <input type="text" name="plan_texts[]"  style="width: 80%" value="{{$item->text}}" class="form-control d-inline-block">
                                             <a href="#" id="delete" class="btn btn-danger delete mb-2 float-right">Sil</a>
 
                                         </div>
                                     @endforeach
                                 </div>
                             </div>
+
 
                             <div class="row">
                                 <div class="col-12 d-flex justify-content-center">
@@ -86,7 +87,7 @@
             let _textInput = `
             <div class="form-group">
             <label for="price">Plan teksti</label>
-            <input type="text"  style="width: 90%" name="plan_texts[]" class="form-control d-inline-block">
+            <input type="text"  style="width: 80%" name="plan_texts[]" class="form-control d-inline-block">
             <a href="#" id="delete"  class="btn btn-danger delete float-right">Sil</a>
             </div>`;
 

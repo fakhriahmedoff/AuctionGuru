@@ -65,7 +65,32 @@ class TextSeeder extends Seeder
         "Shipping & Delivery",
         "SOCIAL MEDIA",
         "PAYMENT METHODS",
-        ];
+        "Billing Details",
+        "Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.",
+        "First Name",
+        "Email",
+        "Order Notes",
+        "Notes about your order e.g. special notes",
+        "Attach your auction sheet",
+        "Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.",
+        "YOUR ORDER",
+        "Select your plan",
+        "Payment Methods",
+        "Lor ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate veritatis, voluptates.
+                            Accusamus accusantium animi aperiam commodi cumque dolore earum eveniet facilis fugit iusto
+                            magnam magni numquam, qui soluta ullam ut.",
+        "FROM BUYERS",
+        "bottomtextvcv",
+        "bottomtext2",
+        "Place Order",
+        "Cash On Delivery",
+        "PayPal",
+        "SUCCESS",
+        "Your order has",
+        "An unexpected error has occured. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim.",
+        "GO BACK TO HOME PAGE"
+
+    ];
 
 
     public function run(): void

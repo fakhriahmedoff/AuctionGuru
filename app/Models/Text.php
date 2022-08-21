@@ -15,4 +15,6 @@ class Text extends Model
     use HasFactory;
 
     protected $fillable = ['key', 'group', 'value'];
+
+
 }

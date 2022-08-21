@@ -35,11 +35,9 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        {!! html()->input('key', $edit ? $text->key : null,[
-                                            'class' => 'form-control ',
-                                            'label' => 'Key',
-                                            'errorLabel' => $errors->first('key')
-                                        ]) !!}
+                                        <label for="key">Key</label>
+                                        <input type="text" readonly name="key" id="key" value="{{$edit ? $text->key: null}}" errorlabel=" key mütləqdir" class="form-control  @if($errors->first('key')) is-invalid @endif">
+                                        <span class="text-danger"> {{$errors->first('key')}}</span>
                                     </div>
                                 </div>
                             </div>

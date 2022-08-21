@@ -6,11 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Japanese Auction Sheet Translation Services</title>
+    <title>@yield('meta_title')</title>
 
-    <meta name="keywords" content="WebSite Template">
-    <meta name="description" content="Japanese Auction Sheet Translation Services">
-    <meta name="author" content="Japanese Auction Sheet Translation Services">
+    <meta name="description" content="@yield('meta_description')">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicons/9466-img-favicon.ico" type="image/x-icon">
@@ -56,7 +54,7 @@
                     <div class="header-column flex-row w-auto">
                         <div class="header-logo">
                             <a href="{{route('home')}}">
-                                <img src="{{asset('frontend')}}/images/product-landing-logo.png" alt="Porto" width="123"
+                                <img src="{{asset($config->logo)}}" style="object-fit: cover" alt="{{$config->homepage_title}}" width="123"
                                      height="32">
                             </a>
                         </div>

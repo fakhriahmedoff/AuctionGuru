@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="{{asset('backend')}}/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="{{asset('backend')}}/plugins/summernote/summernote-bs4.min.css">
+
+    <link rel="stylesheet" href="{{asset('backend')}}/plugins/ekko-lightbox/ekko-lightbox.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -141,11 +143,11 @@
                                     </p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{{route('admin.logout')}}" class="nav-link ">
+                            <li class="nav-item ">
+                                <a href="#" class="nav-link ">
                                     -- <i class="fas fa-money-bill"></i>
                                     <p>
-                                       Ödənişlər
+                                       Ödənişlər - hazir deyil
                                     </p>
                                 </a>
                             </li>
@@ -182,7 +184,7 @@
                     </li>
 
                     <li class="nav-item">
-                    <a href="{{route('admin.texts.index')}}" class="nav-link ">
+                    <a href="{{route('admin.configs.edit',1)}}" class="nav-link ">
                         <i class="fas fa-cogs"></i>
                         <p>
                             Konfiqurasiyalar

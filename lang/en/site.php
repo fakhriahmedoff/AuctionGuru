@@ -13,8 +13,7 @@ return [
     |
     */
 
-    'added'     => 'Uğurla əlavə olundu',
-    'edited'    => 'Uğurla yeniləndi',
-    'save'      => 'Yadda saxla',
+    'cash'          => 'Nağd',
+    'cashless'      => 'Nağdsız',
 
 ];

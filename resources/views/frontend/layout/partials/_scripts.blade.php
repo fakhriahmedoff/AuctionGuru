@@ -25,3 +25,30 @@
         crossorigin="anonymous"></script>
 
 @yield('additional_scripts')
+
+@if(\Illuminate\Support\Facades\Auth::check())
+<script>
+
+    function getSelectionText() {
+        var text = "";
+        if (window.getSelection) {
+            text = window.getSelection().toString();
+        } else if (document.selection && document.selection.type != "Control") {
+            text = document.selection.createRange().text;
+        }
+        return text;
+    }
+
+    window.addEventListener('click', function (evt) {
+        if (evt.detail === 3) {
+            let _selection = getSelectionText();
+
+            if(_selection.length > 1)
+            {
+                window.open(`/admin/texts?filters%5Bgroup%5D=&filters%5Bkey%5D=&filters%5Bvalue%5D=${_selection}`,"_blank" );
+            }
+        }
+    });
+
+</script>
+@endif

@@ -33,9 +33,11 @@ class OrderController extends Controller
         //
     }
 
-    public function show($id)
+    public function show(Order $order): Application|View|Factory
     {
-        //
+        $order->load('plan');
+
+        return view('backend.orders.view',compact('order'));
     }
 
     public function edit($id)

@@ -16,10 +16,8 @@ class UploadImage
         $extension = $uploadedFile->getClientOriginalExtension();
         // Filename to store
         $fileNameToStore = Str::random(16).'_'.time().'.'.$extension;
-        // Upload Image
-        $path = $uploadedFile->move('images/'.$folder,$fileNameToStore);
 
-        return $path;
+        return $uploadedFile->move('images/'.$folder,$fileNameToStore);
     }
 
 }

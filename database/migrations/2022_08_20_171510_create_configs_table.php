@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('configs', function (Blueprint $table) {
             $table->id();
-            $table->longText('logo');
-            $table->longText('logo_mobile');
+            $table->string('logo');
+            $table->string('logo_mobile');
             $table->longText('social_links')->nullable();
             $table->string('phone')->nullable();
             $table->string('phone2')->nullable();

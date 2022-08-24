@@ -51,11 +51,11 @@
                                 </div>
 
                                 @if($config->phone)
-                                    <a href="tel:{{$config->phone}}"
+                                    <a href="tel:{{str_replace([' ','(',')','-'],'',$config->phone)}}"
                                        class="text-decoration-none text-color-dark text-color-hover-primary font-weight-bold text-3-5 ms-2">{{$config->phone}}</a>
                                 @endif
                                  @if($config->phone2)
-                                    <b class="d-inline-block" style="margin-left: 11px"> | </b ><a href="tel:{{$config->phone2}}"
+                                    <b class="d-inline-block" style="margin-left: 11px"> | </b ><a href="tel:{{str_replace([' ','(',')','-'],'',$config->phone2)}}"
                                        class="text-decoration-none text-color-dark text-color-hover-primary font-weight-bold text-3-5 ms-2">{{$config->phone2}}</a>
                                 @endif
                             </li>

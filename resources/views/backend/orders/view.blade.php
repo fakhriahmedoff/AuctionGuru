@@ -9,15 +9,15 @@
                 <div class="col-12">
                     <div class="card card-primary card-outline">
                         <div class="card-header">
-                            <h3 class="card-title">Sifariş no - {{$order->id}}</h3>
+                            <h3 class="card-title">Order no - {{$order->id}}</h3>
 
 
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body p-0">
                             <div class="mailbox-read-info">
-                                <h5 class="mb-2">Sifarişçi: {{$order->name}}</h5>
-                                <h6>Kimdən: {{$order->email}}
+                                <h5 class="mb-2">Buyer: {{$order->name}}</h5>
+                                <h6>From: {{$order->email}}
                                     <span class="mailbox-read-time float-right">{{$order->created_at->format('d.m.Y')}}</span></h6>
                             </div>
 
@@ -28,8 +28,8 @@
                             <!-- /.mailbox-read-message -->
                         </div>
                         <div class="card-footer">
-                            <p>Ödəniş növü: {{__('site.'.$order->payment_method)}}</p>
-                            <p>Paket: {{$order->plan->name}} | Qiyməti: {{$order->plan->price}}$</p>
+                            <p>Payment type: {{__('site.'.$order->payment_method)}}</p>
+                            <p>Package: {{$order->plan->name}} | Price: {{$order->plan->price}}$</p>
                         </div>
                     </div>
                     <!-- /.card -->

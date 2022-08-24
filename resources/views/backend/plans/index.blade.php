@@ -1,6 +1,6 @@
 @extends('backend.layout.master')
 
-@section('title', 'Paketler')
+@section('title', 'Pricing Packages')
 
 @section('content')
 
@@ -12,7 +12,7 @@
                 'name',
                 'price',
                 [
-                    'label' => 'Əməliyyatlar',
+                    'label' => 'Actions',
                     'class' => Itstructure\GridView\Columns\ActionColumn::class,
                     'actionTypes' => [
                         'edit' => function ($data) {

@@ -22,7 +22,7 @@
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
-            <p class="login-box-msg">Admin məlumatlarınızı daxil edin</p>
+            <p class="login-box-msg">Enter your admin credentials</p>
             <form action="{{route('login')}}" method="post">
                 @csrf
                 <div class="form-group mb-3">
@@ -33,7 +33,7 @@
                 </div>
                 <div class="form-group mb-3">
                     {!! html()->input('password', old('password'), [
-                                                     'placeholder' => 'Şifrə',
+                                                     'placeholder' => 'Password',
                                                      'errorLabel' => $errors->first('password')
                                                      ], 'password') !!}
                 </div>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-block">Daxil ol</button>
+                        <button type="submit" class="btn btn-primary btn-block">Log in</button>
                     </div>
                 </div>
             </form>

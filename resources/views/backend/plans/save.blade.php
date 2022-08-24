@@ -8,7 +8,7 @@
     }
 
 @endphp
-@section('title', 'Plan')
+@section('title', 'Pricing Package')
 
 @section('content')
     <div class="col-12">
@@ -24,7 +24,7 @@
                                     <div class="form-group">
                                         {!! html()->input('name', $edit ? $plan->name : null,[
                                          'class' => 'form-control ',
-                                         'label' => 'Adı',
+                                         'label' => 'Name',
                                          'errorLabel' => $errors->first('name')
                                      ]) !!}
                                     </div>
@@ -33,7 +33,7 @@
                                     <div class="form-group">
                                         {!! html()->input('price', $edit ? $plan->price : null,[
                                             'class' => 'form-control ',
-                                            'label' => 'Qiymət',
+                                            'label' => 'Price',
                                             'errorLabel' => $errors->first('price')
                                         ],'number') !!}
                                     </div>
@@ -42,7 +42,7 @@
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    <a id="add_plan_text" href="#"><label for="">Plan teksti əlavə et</label></a>
+                                    <a id="add_plan_text" href="#"><label for="">Add pricing package text</label></a>
                                 </div>
                             </div>
 
@@ -50,9 +50,9 @@
                                 <div class="col-md-4" id="plan-texts">
                                     @foreach($plan->planTexts as $item)
                                         <div class="form-group">
-                                            <label for="price">Plan teksti</label>
+                                            <label for="price">Package label</label>
                                             <input type="text" name="plan_texts[]"  style="width: 80%" value="{{$item->text}}" class="form-control d-inline-block">
-                                            <a href="#" id="delete" class="btn btn-danger delete mb-2 float-right">Sil</a>
+                                            <a href="#" id="delete" class="btn btn-danger delete mb-2 float-right">Del</a>
 
                                         </div>
                                     @endforeach
@@ -86,9 +86,9 @@
 
             let _textInput = `
             <div class="form-group">
-            <label for="price">Plan teksti</label>
+            <label for="price">Package label</label>
             <input type="text"  style="width: 80%" name="plan_texts[]" class="form-control d-inline-block">
-            <a href="#" id="delete"  class="btn btn-danger delete float-right">Sil</a>
+            <a href="#" id="delete"  class="btn btn-danger delete float-right">Del</a>
             </div>`;
 
 

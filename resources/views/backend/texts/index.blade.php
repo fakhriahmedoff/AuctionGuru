@@ -1,6 +1,6 @@
 @extends('backend.layout.master')
 
-@section('title', 'Tekstlər')
+@section('title', 'Content texts')
 
 @section('content')
 
@@ -19,7 +19,7 @@
                 'key',
                 'value',
                 [
-                    'label' => 'Əməliyyatlar',
+                    'label' => 'Actions',
                     'class' => Itstructure\GridView\Columns\ActionColumn::class,
                     'actionTypes' => [
                         'edit' => function ($data) {

@@ -130,7 +130,7 @@
                         <a href="#" class="nav-link ">
                             <i class="fas fa-file-alt"></i>
                             <p>
-                                Hesabat
+                                Summary
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -139,7 +139,7 @@
                                 <a href="{{route('admin.orders.index')}}" class="nav-link ">
                                     -- <i class="fas fa-user-friends"></i>
                                     <p>
-                                        Sifarişlər
+                                        Orders
                                     </p>
                                 </a>
                             </li>
@@ -147,7 +147,7 @@
                                 <a href="#" class="nav-link ">
                                     -- <i class="fas fa-money-bill"></i>
                                     <p>
-                                       Ödənişlər - hazir deyil
+                                       Payments - (not ready)
                                     </p>
                                 </a>
                             </li>
@@ -160,7 +160,7 @@
                         <a href="{{route('admin.plans.index')}}" class="nav-link ">
                             <i class="fas fa-clone"></i>
                             <p>
-                                Paketlər
+                                Pricing packages
                             </p>
                         </a>
                     </li>
@@ -169,7 +169,7 @@
                         <a href="{{route('admin.reviews.index')}}" class="nav-link ">
                             <i class="fas fa-comments"></i>
                             <p>
-                                Şərhlər
+                                Reviews
                             </p>
                         </a>
                     </li>
@@ -178,7 +178,7 @@
                         <a href="{{route('admin.texts.index')}}" class="nav-link ">
                             <i class="fas fa-align-justify"></i>
                             <p>
-                                Tekstlər
+                                Content texts
                             </p>
                         </a>
                     </li>
@@ -187,7 +187,7 @@
                     <a href="{{route('admin.configs.edit',1)}}" class="nav-link ">
                         <i class="fas fa-cogs"></i>
                         <p>
-                            Konfiqurasiyalar
+                            Configurations
                         </p>
                     </a>
                     </li>
@@ -197,7 +197,7 @@
                         <a href="{{route('admin.logout')}}" class="nav-link ">
                             <i class="nav-icon far fa-circle text-danger"></i>
                             <p>
-                                Çıxış
+                                Log out
                             </p>
                         </a>
                     </li>

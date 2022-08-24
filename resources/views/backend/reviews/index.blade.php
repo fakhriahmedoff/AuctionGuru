@@ -1,12 +1,12 @@
 @extends('backend.layout.master')
 
-@section('title', 'Şərhlər')
+@section('title', 'Reviews')
 
 @section('content')
 
     <div class="mt-3">
         <div class="card-header">
-            <a href="{{route('admin.reviews.create')}}" class="btn btn-primary">Şərh yarat</a>
+            <a href="{{route('admin.reviews.create')}}" class="btn btn-primary">Add review</a>
         </div>
         {!! grid_view([
             'dataProvider' => $dataProvider,
@@ -16,7 +16,7 @@
                 "text",
                 "number",
                 [
-                    'label' => 'Əməliyyatlar',
+                    'label' => 'Actions',
                     'class' => Itstructure\GridView\Columns\ActionColumn::class,
                     'actionTypes' => [
                         'edit' => function ($data) {

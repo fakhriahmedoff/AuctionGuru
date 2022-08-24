@@ -13,8 +13,8 @@ return [
     |
     */
 
-    'added'     => 'Uğurla əlavə olundu',
-    'edited'    => 'Uğurla yeniləndi',
-    'save'      => 'Yadda saxla',
+    'added'     => 'Successfully created',
+    'edited'    => 'Successfully updated',
+    'save'      => 'Save',
 
 ];

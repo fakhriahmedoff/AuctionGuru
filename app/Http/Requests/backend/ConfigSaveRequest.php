@@ -9,12 +9,15 @@ use JetBrains\PhpStorm\ArrayShape;
 /**
  * @property UploadedFile logo
  * @property UploadedFile logo_mobile
- * @property ?array social_Links
+ * @property ?array social_links
  * @property string homepage_title
  * @property string homepage_meta_desc
  * @property ?string homepage_image_alt_tags
  * @property string order_title
  * @property string order_meta_desc
+ * @property ?string email
+ * @property ?string phone
+ * @property ?string phone2
  */
 class ConfigSaveRequest extends FormRequest
 {
@@ -26,7 +29,10 @@ class ConfigSaveRequest extends FormRequest
     #[ArrayShape([
         'logo' => "string",
         'logo_mobile' => "string",
-        'social_Links' => "array",
+        'social_links' => "array",
+        'email'    => 'string',
+        'phone'        => 'string',
+        'phone2'        => 'string',
         'homepage_title' => "string",
         'homepage_meta_desc' => "string",
         'homepage_image_alt_tags' => "string",
@@ -38,12 +44,15 @@ class ConfigSaveRequest extends FormRequest
         return [
             'logo'                      => 'nullable|image',
             'logo_mobile'               => 'nullable|image',
-            'social_Links'              => 'nullable',
+            'social_links'              => 'nullable',
+            'email'                     => 'nullable|max:128',
+            'phone'                     => 'nullable|max:128',
+            'phone2'                    => 'nullable|max:128',
             'homepage_title'            => 'required',
             'homepage_meta_desc'        => 'required',
             'homepage_image_alt_tags'   => 'nullable',
             'order_title'               => 'required',
-            'order_meta_desc'           => 'required'
+            'order_meta_desc'           => 'required',
         ];
     }
 
@@ -57,9 +66,24 @@ class ConfigSaveRequest extends FormRequest
         return $this->logo_mobile;
     }
 
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function getPhoneTwo(): ?string
+    {
+        return $this->phone2;
+    }
+
     public function getSocialLinks(): ?array
     {
-        return $this->social_Links;
+        return $this->social_links;
     }
 
     public function getHomepageLinks(): string

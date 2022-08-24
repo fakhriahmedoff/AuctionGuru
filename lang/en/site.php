@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'cash'          => 'Nağd',
-    'cashless'      => 'Nağdsız',
+    'cash'          => 'Cash',
+    'cashless'      => 'Cashless',
 
 ];

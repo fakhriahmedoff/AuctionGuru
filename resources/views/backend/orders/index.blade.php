@@ -1,6 +1,6 @@
 @extends('backend.layout.master')
 
-@section('title', 'Sifarişlər')
+@section('title', 'Orders')
 
 @section('content')
 
@@ -12,14 +12,15 @@
                 'name',
                 'email',
                 [
-                    'label' => 'Tekst',
+                    'label' => 'Text',
+                    'filter' => false,
                     'value' => function($data){
-                        return \Illuminate\Support\Str::limit($data->message,20);
+                        return \Illuminate\Support\Str::limit($data->message,50,'...');
                     }
                     ],
 
                 [
-                    'label' => 'Əməliyyatlar',
+                    'label' => 'Actions',
                     'class' => Itstructure\GridView\Columns\ActionColumn::class,
                     'actionTypes' => [
                         'view' => function ($data) {

@@ -1,6 +1,6 @@
 @extends('backend.layout.master')
 
-@section('title','Admin panel məlumatlarını redaktə et')
+@section('title','Update admin panel credentials')
 
 @section('content')
     <section class="content">
@@ -9,7 +9,7 @@
                 <div class="col-md-6">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Məlumatları doldurun</h3>
+                            <h3 class="card-title">Fill inputs below</h3>
                         </div>
                         <form method="post" action="{{route('admin.updateAdminDetails')}}">
                             @csrf
@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="form-group">
                                     {!! html()->input('password', '', [
-                                                     'placeholder' => 'Şifrə',
+                                                     'placeholder' => 'Password',
                                                      'errorLabel' => $errors->first('password')
                                                      ],'password') !!}
                                 </div>

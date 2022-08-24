@@ -17,7 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('logo');
             $table->string('logo_mobile');
-            $table->string('social_Links')->nullable();
+            $table->string('social_links')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('phone2')->nullable();
+            $table->string('email')->nullable();
             $table->string('homepage_title');
             $table->string('homepage_meta_desc');
             $table->string('homepage_image_alt_tags')->nullable();

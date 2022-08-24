@@ -18,13 +18,18 @@ class ConfigService
         $model = $config ?? new Config();
 
         $model->fill([
-            "social_Links"             => $request->getSocialLinks(),
+            "social_Links"             => json_encode($request->getSocialLinks()),
+            "phone"                    => $request->getPhone(),
+            "phone2"                   => $request->getPhoneTwo(),
+            "email"                    => $request->getEmail(),
             "homepage_title"           => $request->getHomepageLinks(),
             "homepage_meta_desc"       => $request->getHomepageMetaDesc(),
             "homepage_image_alt_tags"  => $request->getHomepageImageAltTags(),
             "order_title"              => $request->getOrderTitle(),
             "order_meta_desc"          => $request->getOrderMetaDesc(),
         ]);
+
+
 
         if($request->getLogo())
         {

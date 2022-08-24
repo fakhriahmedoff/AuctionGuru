@@ -10,7 +10,7 @@
     }
 
 @endphp
-@section('title', 'Tekst')
+@section('title', 'Content texts')
 
 @section('content')
     <div class="col-12">
@@ -26,7 +26,7 @@
                                     <div class="form-group">
                                         {!! html()->dropDown('group',$edit ? $text->group : null ,['site' => 'site','admin' => 'admin'], [
                                             'prompt' => ' - Seçin -',
-                                            'label' => 'Qrup',
+                                            'label' => 'Group',
                                             'class' => 'form-control ',
                                              'errorLabel' => $errors->first('group')
 
@@ -44,7 +44,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group w-100">
-                                        <label for="">Tekst</label>
+                                        <label for="">Text</label>
                                         <textarea name="value"
                                                   class="form-control @if($errors->first('value')) is-invalid @endif"
                                                   cols="30" rows="3">{{$edit ? $text->value : null}}</textarea>

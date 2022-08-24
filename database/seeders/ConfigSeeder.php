@@ -13,7 +13,6 @@ class ConfigSeeder extends Seeder
         Config::create([
             "logo" => '/images/config/logo.png',
             "logo_mobile" => '/images/config/logo.png',
-            "social_Links" => '',
             "homepage_title" => 'AuctionGuru',
             "homepage_meta_desc" => 'AuctionGuru meta desc',
             "homepage_image_alt_tags" => 'Autction guru alt tags',

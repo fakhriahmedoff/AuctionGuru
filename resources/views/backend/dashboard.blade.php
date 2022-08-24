@@ -1,6 +1,6 @@
 @extends('backend.layout.master')
 
-@section('title', 'Ana səhifə ')
+@section('title', 'Homepage ')
 
 @section('content')
 

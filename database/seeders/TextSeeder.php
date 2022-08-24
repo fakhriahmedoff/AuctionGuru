@@ -59,7 +59,7 @@ class TextSeeder extends Seeder
         "Get all the latest information on Events, Sales and Offers.",
         "Your E-mail Address",
         "SUBSCRIBE NOW!",
-        "CUSTOMER SERVICE",
+        "About us detail",
         "Help & FAQs",
         "Order Tracking",
         "Shipping & Delivery",

@@ -15,17 +15,17 @@ return new class extends Migration
     {
         Schema::create('configs', function (Blueprint $table) {
             $table->id();
-            $table->string('logo');
-            $table->string('logo_mobile');
-            $table->string('social_links')->nullable();
+            $table->longText('logo');
+            $table->longText('logo_mobile');
+            $table->longText('social_links')->nullable();
             $table->string('phone')->nullable();
             $table->string('phone2')->nullable();
             $table->string('email')->nullable();
             $table->string('homepage_title');
-            $table->string('homepage_meta_desc');
-            $table->string('homepage_image_alt_tags')->nullable();
+            $table->longText('homepage_meta_desc');
+            $table->longText('homepage_image_alt_tags')->nullable();
             $table->string('order_title');
-            $table->string('order_meta_desc');
+            $table->longText('order_meta_desc');
             $table->timestamps();
         });
     }

@@ -48,7 +48,7 @@ class ConfigSaveRequest extends FormRequest
             'email'                     => 'nullable|max:128',
             'phone'                     => 'nullable|max:128',
             'phone2'                    => 'nullable|max:128',
-            'homepage_title'            => 'required',
+            'homepage_title'            => 'required|max:255',
             'homepage_meta_desc'        => 'required',
             'homepage_image_alt_tags'   => 'nullable',
             'order_title'               => 'required',

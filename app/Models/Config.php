@@ -15,7 +15,7 @@ class Config extends Model
         'email',
         'phone',
         'phone2',
-        'social_Links',
+        'social_links',
         'homepage_title',
         'homepage_meta_desc',
         'homepage_image_alt_tags',

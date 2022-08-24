@@ -18,7 +18,7 @@ class ConfigService
         $model = $config ?? new Config();
 
         $model->fill([
-            "social_Links"             => json_encode($request->getSocialLinks()),
+            "social_links"             => json_encode($request->getSocialLinks()),
             "phone"                    => $request->getPhone(),
             "phone2"                   => $request->getPhoneTwo(),
             "email"                    => $request->getEmail(),

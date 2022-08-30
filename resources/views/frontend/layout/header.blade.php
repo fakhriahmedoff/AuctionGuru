@@ -82,7 +82,7 @@
                                             <li class="dropdown">
                                                 <a class="dropdown-item" data-hash data-hash-offset="0"
                                                    data-hash-offset-lg="70"
-                                                   href="@if(Request::route()->getName() != 'home') {{route('home')}}@endif#about-us">{{$texts['about-us']}}
+                                                   href="@if(Request::route()->getName() != 'home') {{route('home')}}@endif#about-us">{{$texts['aboutus']}}
                                                 </a>
                                             </li>
                                             <li class="dropdown">

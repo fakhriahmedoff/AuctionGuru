@@ -37,12 +37,12 @@
                                 <textarea
                                     class="form-control h-auto py-2 @if($errors->first('message')) is-invalid @endif"
                                     name="message" rows="5"
-                                    placeholder="{{$texts['notes-about-youend']}}">{{old('message')}}</textarea>
+                                    placeholder="{{$texts['notes-about-your-order']}}">{{old('message')}}</textarea>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <label class="form-label">{{$texts['attach-your-aucend']}} <span
+                                <label class="form-label">{{$texts['attach-your-auction-sheet']}} <span
                                         class="text-color-danger">*</span></label>
                                 <input type="file"
                                        class="form-control h-auto py-2 @if($errors->first('uploaded_files')) is-invalid @endif"
@@ -66,7 +66,7 @@
                                     <tr class="shipping">
                                         <td colspan="2">
                                             <strong
-                                                class="d-block text-color-dark mb-2">{{$texts['select-your-plaend']}}</strong>
+                                                class="d-block text-color-dark mb-2">{{$texts['select-your-plan']}}</strong>
 
                                             <div class="d-flex flex-column">
                                                 @foreach($plans as $plan)
@@ -103,21 +103,21 @@
                                                     <input id="payment_method1" type="radio" class="me-2"
                                                            name="payment_method"
                                                            value="{{\App\Enums\PaymentMethods::CASH}}" checked="">
-                                                    {{$texts['cash-on-deliverend']}}
+                                                    {{$texts['payment1']}}
                                                 </label>
                                                 <label class="d-flex align-items-center text-color-grey mb-0"
                                                        for="payment_method2">
                                                     <input id="payment_method2" type="radio" class="me-2"
                                                            name="payment_method"
                                                            value="{{\App\Enums\PaymentMethods::CASHLESS}}">
-                                                    {{$texts['paypal']}}
+                                                    {{$texts['payment2']}}
                                                 </label>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2">
-                                            {{$texts['your-personal-dend']}}
+                                            {{$texts['your-personal-data']}}
                                         </td>
                                     </tr>
                                     </tbody>

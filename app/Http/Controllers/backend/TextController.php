@@ -37,7 +37,7 @@ class TextController extends Controller
     {
         $this->textService->storeText(request: $request);
 
-        return redirect()->route('admin.texts.index')->withSuccess(__('admin.added'));
+        return redirect()->back()->withSuccess(__('admin.added'));
     }
 
     public function show($id)
@@ -54,7 +54,7 @@ class TextController extends Controller
     {
         $this->textService->storeText(request: $request, text: $text);
 
-        return redirect()->route('admin.texts.index')->withSuccess(__('admin.edited'));
+        return redirect()->back()->withSuccess(__('admin.edited'));
     }
 
     public function delete(Text $text): RedirectResponse

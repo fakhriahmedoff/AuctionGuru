@@ -15,6 +15,7 @@ class TextService
             'group' => $request->getGroup(),
             'value' => $request->getValue(),
             'key'   => $request->getKey(),
+            'type'  => $request->getType()
         ]);
 
 

@@ -11,8 +11,8 @@ class ConfigSeeder extends Seeder
     public function run(): void
     {
         Config::create([
-            "logo" => '/images/config/logo.png',
-            "logo_mobile" => '/images/config/logo.png',
+            "logo" => '/frontend/images/product-landing-logo.png',
+            "logo_mobile" => '/frontend/images/product-landing-logo.png',
             "homepage_title" => 'AuctionGuru',
             "homepage_meta_desc" => 'AuctionGuru meta desc',
             "homepage_image_alt_tags" => 'Autction guru alt tags',

@@ -1,6 +1,6 @@
 @extends('backend.layout.master')
 
-@section('title','Sifarişlər')
+@section('title', 'Orders')
 
 @section('content')
     <section class="content">
@@ -38,7 +38,7 @@
                 <div class="col-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h4 class="card-title">Əlavə edilmiş şəkillər </h4>
+                            <h4 class="card-title">Uploaded Pictures </h4>
                         </div>
                         <div class="card-body">
                             <div class="row">

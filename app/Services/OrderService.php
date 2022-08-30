@@ -6,9 +6,11 @@ namespace App\Services;
 
 use App\Actions\UploadImage;
 use App\Http\Requests\site\StoreOrderRequest;
+use App\Mail\OrderMail;
 use App\Models\Order;
-use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Hash;
+
+use Illuminate\Support\Facades\Mail;
+
 
 class OrderService
 {
@@ -41,6 +43,9 @@ class OrderService
             throw new \DomainException('Order save failed');
         }
 
+        $this->sendMail($model->email, $model);
+        //$this->sendMail('', $model);
+
         return $model;
     }
 
@@ -52,6 +57,11 @@ class OrderService
         }
 
         return $return;
+    }
+
+    private function sendMail(string $receiver, Order $order): void
+    {
+        Mail::to($receiver)->send(new OrderMail($order));
     }
 }
 

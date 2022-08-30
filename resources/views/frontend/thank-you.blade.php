@@ -23,11 +23,11 @@
                     <div class="http-error-main">
                         <h2 class="mb-0">{{$texts['success']}}</h2>
                         <span class="text-6 font-weight-bold text-color-dark">{{$texts['your-order-has']}} </span>
-                        <p class="text-3 my-4 line-height-8">{{$texts['an-unexpected-eend']}}</p>
+                        <p class="text-3 my-4 line-height-8">{{$texts['an-unexpected-error-ocurred']}}</p>
                     </div>
                     <a href="{{route('home')}}"
                        class="btn btn-primary btn-rounded btn-xl font-weight-semibold text-2 px-4 py-3 mt-1 mb-4"><i
-                            class="fas fa-angle-left pe-3"></i>{{$texts['go-back-to-homeend']}}</a>
+                            class="fas fa-angle-left pe-3"></i>{{$texts['go-back-to-home']}}</a>
                 </div>
             </div>
         </section>

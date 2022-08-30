@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('key');
             $table->string('group');
             $table->longText('value');
+            $table->enum('type',['textarea','editor'])->default('textarea');
             $table->timestamps();
         });
     }

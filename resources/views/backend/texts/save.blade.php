@@ -32,6 +32,15 @@
 
                                         ]) !!}
                                     </div>
+                                    <div class="form-group">
+                                        {!! html()->dropDown('type',$edit ? $text->type : null ,['editor' => 'editor','textarea' => 'textarea'], [
+                                            'prompt' => ' - Seçin -',
+                                            'label' => 'Text type',
+                                            'class' => 'form-control ',
+                                             'errorLabel' => $errors->first('type')
+
+                                        ]) !!}
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -45,9 +54,17 @@
                                 <div class="col-md-12">
                                     <div class="form-group w-100">
                                         <label for="">Text</label>
+                                        @if($text->type == 'textarea')
                                         <textarea name="value"
                                                   class="form-control @if($errors->first('value')) is-invalid @endif"
-                                                  cols="30" rows="3">{{$edit ? $text->value : null}}</textarea>
+                                                  cols="30" rows="3">{!!$edit ? strip_tags($text->value) : null !!}</textarea>
+                                        @endif
+
+
+                                        @if($text->type == 'editor')
+                                            <textarea name="value" id="summernote">{{$edit ? $text->value : null}}</textarea>
+                                        @endif
+
                                         @if($errors->first('value'))
                                             <span class="text-danger"> {{$errors->first('value')}}</span>
                                         @endif
@@ -71,5 +88,9 @@
 @endsection
 
 @section('additional_scripts')
-
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote();
+        });
+    </script>
 @append

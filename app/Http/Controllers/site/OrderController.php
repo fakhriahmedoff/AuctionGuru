@@ -36,21 +36,21 @@ class OrderController extends Controller
 
     public function order(StoreOrderRequest $request): RedirectResponse
     {
-        try {
+//        try {
             $this->orderService->storeOrder($request);
 
             return redirect()->route('thank-you');
-        }catch (\Exception $exception)
-        {
-            return redirect()->route('home')->withErrors(['error_payment' => "There's problem with payment"]);
-        }
+//        }catch (\Exception $exception)
+//        {
+//            return redirect()->route('home')->withErrors(['error_payment' => "There's problem with payment"]);
+//        }
 
     }
 
     public function thankYou(): Application|Factory|View
     {
-        $texts = $this->textRepository->getTextsAll();
-        $config     = ConfigRepository::getConfig();
+        $texts  = $this->textRepository->getTextsAll();
+        $config = ConfigRepository::getConfig();
 
         return view('frontend.thank-you',compact(['config','texts']));
     }

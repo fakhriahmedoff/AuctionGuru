@@ -77,7 +77,7 @@
                                                                name="plan_id" value="{{$plan->id}}"
                                                                @if($plan->id == request()->input('id')) checked=""
                                                                @elseif(!request()->input('id') && $plan->id ==1) checked="" @endif>
-                                                        {{$plan->name}}
+                                                        {{$plan->name}} - {{$plan->price}}$
                                                     </label>
                                                 @endforeach
 

@@ -39,6 +39,11 @@ class OrderController extends Controller
 //        try {
             $this->orderService->storeOrder($request);
 
+            if($request->getPaymentMethod() == 'cashless')
+            {
+               return redirect('https://www.paypal.com/paypalme/muradshiriev');
+            }
+
             return redirect()->route('thank-you');
 //        }catch (\Exception $exception)
 //        {
@@ -49,6 +54,7 @@ class OrderController extends Controller
 
     public function thankYou(): Application|Factory|View
     {
+
         $texts  = $this->textRepository->getTextsAll();
         $config = ConfigRepository::getConfig();
 

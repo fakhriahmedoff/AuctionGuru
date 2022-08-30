@@ -44,7 +44,7 @@ class OrderService
         }
 
         $this->sendMail($model->email, $model);
-        //$this->sendMail('', $model);
+        $this->sendMail('murad@exportfrom.jp', $model);
 
         return $model;
     }
